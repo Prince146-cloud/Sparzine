@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sparzine Laundromat | Premium Laundry & Dry Cleaning in Kampala</title>
+    <title>Sparzine Laundromat & Cleaning Services | Premium Services in Kampala</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" href="https://i.imgur.com/p1lpP9Q.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -42,13 +42,15 @@
                 <div class="container mx-auto px-6 py-2 flex justify-between items-center">
                     <div class="flex items-center cursor-pointer" onclick="document.getElementById('hero').scrollIntoView({ behavior: 'smooth' });">
                         <div class="bg-gray-100 p-1 rounded-full shadow-sm">
-                            <img src="https://i.imgur.com/p1lpP9Q.png" alt="Sparzine Laundromat Logo" class="h-14 md:h-16 w-auto" />
+                            <img src="https://i.imgur.com/p1lpP9Q.png" alt="Sparzine Logo" class="h-14 md:h-16 w-auto" />
                         </div>
+                         <span class="ml-4 text-xl font-bold text-gray-700 hidden sm:block">Sparzine Cleaning Services</span>
                     </div>
                     
                     <!-- Desktop Nav -->
                     <nav class="hidden md:flex items-center space-x-8">
                         <a href="#services" class="text-gray-600 hover:text-brand-green font-medium transition-colors text-lg">Services</a>
+                        <a href="#products" class="text-gray-600 hover:text-brand-green font-medium transition-colors text-lg">Products</a>
                         <a href="#why-us" class="text-gray-600 hover:text-brand-green font-medium transition-colors text-lg">Why Us</a>
                         <a href="#testimonials" class="text-gray-600 hover:text-brand-green font-medium transition-colors text-lg">Testimonials</a>
                         <a href="#contact" class="text-gray-600 hover:text-brand-green font-medium transition-colors text-lg">Contact</a>
@@ -71,6 +73,7 @@
                 <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg absolute top-full left-0 right-0">
                     <div class="px-4 pt-2 pb-4 space-y-2 text-center">
                         <a href="#services" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-brand-green hover:bg-gray-50">Services</a>
+                        <a href="#products" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-brand-green hover:bg-gray-50">Products</a>
                         <a href="#why-us" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-brand-green hover:bg-gray-50">Why Us</a>
                         <a href="#testimonials" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-brand-green hover:bg-gray-50">Testimonials</a>
                         <a href="#contact" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-brand-green hover:bg-gray-50">Contact</a>
@@ -84,12 +87,12 @@
                     <div class="absolute inset-0 bg-black bg-opacity-50"></div>
                     <div class="relative z-10 p-6">
                         <h1 class="text-5xl md:text-7xl font-extrabold text-white leading-tight tracking-tight" style="text-shadow: 2px 2px 8px rgba(0,0,0,0.6)">
-                            Premium Care 
+                            Premium Laundry & 
                             <br />
-                            <span class="text-brand-green-light">For Your Finest Garments.</span>
+                            <span class="text-brand-green-light">Cleaning Services.</span>
                         </h1>
                         <p class="mt-6 max-w-2xl mx-auto text-lg md:text-xl text-gray-200">
-                            Experience the best laundry and dry cleaning service in Kampala. We treat your clothes with the care they deserve.
+                            Experience the best laundry, dry cleaning, and home cleaning services in Kampala. We treat your clothes and home with the care they deserve.
                         </p>
                         <div class="mt-10 flex justify-center">
                             <a href="#services" class="bg-brand-green-light text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-opacity-90 transition-all hover:scale-105 transform shadow-2xl">
@@ -105,17 +108,35 @@
                         <div class="text-center mb-16">
                             <h2 class="text-4xl md:text-5xl font-extrabold text-gray-800">What We Offer</h2>
                             <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-                                From everyday wear to special occasion outfits, we provide a full range of services to meet your needs.
+                                From everyday wear to a sparkling home, we provide a full range of services to meet your needs.
                             </p>
                         </div>
-                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                            <!-- Service Card: Residential Cleaning -->
+                            <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col items-center text-center border border-transparent hover:border-green-200">
+                                <svg class="h-12 w-12 text-brand-green mb-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                                <h3 class="text-2xl font-bold text-gray-800 mb-2">Residential Cleaning</h3>
+                                <p class="text-gray-600">Complete home cleaning services to make your living space spotless, from top to bottom.</p>
+                            </div>
+                             <!-- Service Card: Post Construction Cleaning -->
+                            <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col items-center text-center border border-transparent hover:border-green-200">
+                                <svg class="h-12 w-12 text-brand-green mb-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><path d="m10 10-4 4 4 4"/><path d="m14 18 4-4-4-4"/></svg>
+                                <h3 class="text-2xl font-bold text-gray-800 mb-2">Post-Construction</h3>
+                                <p class="text-gray-600">We handle the dust and debris after your renovation or build, leaving your new space ready to enjoy.</p>
+                            </div>
+                             <!-- Service Card: Window Cleaning -->
+                            <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col items-center text-center border border-transparent hover:border-green-200">
+                                <svg class="h-12 w-12 text-brand-green mb-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 12a10 10 0 0 0-10-10"/><path d="M12 12a10 10 0 0 1 10-10"/></svg>
+                                <h3 class="text-2xl font-bold text-gray-800 mb-2">Window Cleaning</h3>
+                                <p class="text-gray-600">Streak-free and crystal clear window cleaning for homes and businesses of all sizes.</p>
+                            </div>
                             <!-- Service Card 1 -->
                             <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col items-center text-center border border-transparent hover:border-green-200">
                                 <svg class="h-12 w-12 text-brand-green mb-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M20.38 3.46 16 2a4 4 0 0 0-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23Z" />
                                 </svg>
                                 <h3 class="text-2xl font-bold text-gray-800 mb-2">Dry Cleaning</h3>
-                                <p class="text-gray-600">Expert care for your delicate and valuable garments, using eco-friendly solvents to ensure a perfect finish.</p>
+                                <p class="text-gray-600">Expert care for your delicate garments, using eco-friendly solvents to ensure a perfect finish.</p>
                             </div>
                             <!-- Service Card 2 -->
                              <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col items-center text-center border border-transparent hover:border-green-200">
@@ -127,7 +148,7 @@
                                     <path d="M12 18v3" />
                                 </svg>
                                 <h3 class="text-2xl font-bold text-gray-800 mb-2">Wash & Fold</h3>
-                                <p class="text-gray-600">Your everyday laundry, perfectly washed, dried, and folded. A simple, time-saving solution for busy lives.</p>
+                                <p class="text-gray-600">Your everyday laundry, perfectly washed, dried, and folded. A time-saving solution for busy lives.</p>
                             </div>
                             <!-- Service Card 3 -->
                              <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col items-center text-center border border-transparent hover:border-green-200">
@@ -139,47 +160,105 @@
                                     <path d="M9 18h.01" />
                                 </svg>
                                 <h3 class="text-2xl font-bold text-gray-800 mb-2">Ironing & Pressing</h3>
-                                <p class="text-gray-600">Crisp, wrinkle-free clothes ready to wear. We press everything from business shirts to bed linens with precision.</p>
-                            </div>
-                            <!-- Service Card 4 -->
-                             <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col items-center text-center border border-transparent hover:border-green-200">
-                                <svg class="h-12 w-12 text-brand-green mb-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="m12 3-1.9 4.8-4.8 1.9 4.8 1.9 1.9 4.8 1.9-4.8 4.8-1.9-4.8-1.9Z"/>
-                                    <path d="M5 22 7 17l5-2-5-2-2-5"/>
-                                    <path d="M19 2 17 7l-5 2 5 2 2 5"/>
-                                </svg>
-                                <h3 class="text-2xl font-bold text-gray-800 mb-2">Stain Removal</h3>
-                                <p class="text-gray-600">Our specialists tackle tough stains with advanced techniques, restoring your favorite items to their former glory.</p>
+                                <p class="text-gray-600">Crisp, wrinkle-free clothes ready to wear. We press everything from shirts to bed linens with precision.</p>
                             </div>
                             <!-- Service Card 5 -->
                              <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col items-center text-center border border-transparent hover:border-green-200">
                                 <svg class="h-12 w-12 text-brand-green mb-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 18v-2.5c0-1.4-1.1-2.5-2.5-2.5H14"/><path d="M13 15.5V6.4a2.4 2.4 0 0 0-4.8 0v9.1"/><path d="M8.2 15.5v-2.2a1.8 1.8 0 0 0-3.6 0v2.2"/><path d="M4.6 15.5H14a2.5 2.5 0 0 1 2.5 2.5V20"/><path d="M2.5 18H20"/></svg>
                                 <h3 class="text-2xl font-bold text-gray-800 mb-2">Carpet Cleaning</h3>
-                                <p class="text-gray-600">Deep cleaning for rugs and carpets of all sizes, removing dirt and allergens to freshen up your home.</p>
+                                <p class="text-gray-600">Deep cleaning for rugs and carpets, removing dirt and allergens to freshen up your home.</p>
                             </div>
                             <!-- Service Card 6 -->
                              <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col items-center text-center border border-transparent hover:border-green-200">
                                 <svg class="h-12 w-12 text-brand-green mb-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v3"/><path d="M2 12h20"/><path d="M3 12v6a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-6"/><path d="M4 17h.01"/><path d="M20 17h.01"/></svg>
                                 <h3 class="text-2xl font-bold text-gray-800 mb-2">Sofa Set Cleaning</h3>
-                                <p class="text-gray-600">Professional upholstery cleaning for your sofas and chairs, reviving fabrics and removing stubborn spots.</p>
-                            </div>
-                             <!-- Service Card 7 -->
-                             <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col items-center text-center border border-transparent hover:border-green-200">
-                                <svg class="h-12 w-12 text-brand-green mb-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18v-1a2 2 0 0 1 2-2h8a1 1 0 0 1 1 1v2a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-2.34a1 1 0 0 0-.28-.7L18.4 9.94a1 1 0 0 0-.78-.44H6.4a1 1 0 0 0-.78.44L3.28 15.96a1 1 0 0 0-.28.7V17a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1Z"/><path d="M12 15v-3"/></svg>
-                                <h3 class="text-2xl font-bold text-gray-800 mb-2">Shoe Cleaning</h3>
-                                <p class="text-gray-600">Specialized cleaning for all types of footwear, from sneakers to formal shoes, bringing them back to life.</p>
+                                <p class="text-gray-600">Professional upholstery cleaning for your sofas, reviving fabrics and removing stubborn spots.</p>
                             </div>
                         </div>
                     </div>
                 </section>
                 
+                <!-- Products Section -->
+                <section id="products" class="py-24 bg-brand-bg">
+                    <div class="container mx-auto px-6">
+                        <div class="text-center mb-16">
+                            <h2 class="text-4xl md:text-5xl font-extrabold text-gray-800">Purchase Our Chemicals</h2>
+                            <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+                                Get professional results at home with our premium range of dry cleaning and laundry chemicals.
+                            </p>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                            <!-- Product Card 1 -->
+                            <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col text-center overflow-hidden">
+                                <div class="p-4 bg-gray-100">
+                                    <img src="https://live.staticflickr.com/65535/54869843143_653c0f3c49_m.jpg" alt="Detergent Boost" class="w-full h-48 object-contain">
+                                </div>
+                                <div class="p-6 flex flex-col flex-grow">
+                                    <h3 class="text-2xl font-bold text-gray-800 mb-2">Detergent Boost</h3>
+                                    <p class="text-gray-800 font-semibold text-xl mb-4">20,000 UGX</p>
+                                    <div class="mt-auto">
+                                        <a href="https://wa.me/256707128442" target="_blank" rel="noopener noreferrer" class="block bg-brand-green text-white px-6 py-3 rounded-lg font-semibold hover:bg-opacity-90 transition-all">
+                                            Order on WhatsApp
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                             <!-- Product Card 2 -->
+                            <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col text-center overflow-hidden">
+                                <div class="p-4 bg-gray-100">
+                                    <img src="https://live.staticflickr.com/65535/54868753592_226ca42888_m.jpg" alt="Stain Remover" class="w-full h-48 object-contain">
+                                </div>
+                                <div class="p-6 flex flex-col flex-grow">
+                                    <h3 class="text-2xl font-bold text-gray-800 mb-2">Stain Remover</h3>
+                                    <p class="text-gray-800 font-semibold text-xl mb-4">25,000 UGX</p>
+                                    <div class="mt-auto">
+                                        <a href="https://wa.me/256707128442" target="_blank" rel="noopener noreferrer" class="block bg-brand-green text-white px-6 py-3 rounded-lg font-semibold hover:bg-opacity-90 transition-all">
+                                            Order on WhatsApp
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                             <!-- Product Card 3 -->
+                            <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col text-center overflow-hidden">
+                                <div class="p-4 bg-gray-100">
+                                    <img src="https://live.staticflickr.com/65535/54868753697_353c921b50_m.jpg" alt="Fabric Softener" class="w-full h-48 object-contain">
+                                </div>
+                                <div class="p-6 flex flex-col flex-grow">
+                                    <h3 class="text-2xl font-bold text-gray-800 mb-2">Fabric Softener</h3>
+                                    <p class="text-gray-800 font-semibold text-xl mb-4">30,000 UGX</p>
+                                    <div class="mt-auto">
+                                        <a href="https://wa.me/256707128442" target="_blank" rel="noopener noreferrer" class="block bg-brand-green text-white px-6 py-3 rounded-lg font-semibold hover:bg-opacity-90 transition-all">
+                                            Order on WhatsApp
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                             <!-- Product Card 4 -->
+                            <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col text-center overflow-hidden">
+                                <div class="p-4 bg-gray-100">
+                                    <img src="https://live.staticflickr.com/65535/54869859914_05f654222f_m.jpg" alt="Perchloroethylene" class="w-full h-48 object-contain">
+                                </div>
+                                <div class="p-6 flex flex-col flex-grow">
+                                    <h3 class="text-2xl font-bold text-gray-800 mb-2">Perchloroethylene</h3>
+                                    <p class="text-gray-800 font-semibold text-xl mb-4">30,000 UGX</p>
+                                    <div class="mt-auto">
+                                        <a href="https://wa.me/256707128442" target="_blank" rel="noopener noreferrer" class="block bg-brand-green text-white px-6 py-3 rounded-lg font-semibold hover:bg-opacity-90 transition-all">
+                                            Order on WhatsApp
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
                 <!-- Why Choose Us Section -->
-                <section id="why-us" class="py-24 bg-brand-bg">
+                <section id="why-us" class="py-24 bg-brand-bg-alt">
                     <div class="container mx-auto px-6">
                         <div class="text-center mb-16">
                             <h2 class="text-4xl md:text-5xl font-extrabold text-gray-800">Why Sparzine Stands Out</h2>
                             <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-                                More than just a laundromat, we are your partners in garment care.
+                                More than just a cleaning company, we are your partners in home and garment care.
                             </p>
                         </div>
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -189,7 +268,7 @@
                                     <svg class="h-12 w-12 text-brand-green" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
                                 </div>
                                 <h3 class="text-2xl font-bold text-gray-800 mb-2">Impeccable Quality</h3>
-                                <p class="text-gray-600">We use state-of-the-art equipment and premium detergents to ensure your garments are returned in pristine condition, every single time.</p>
+                                <p class="text-gray-600">We use state-of-the-art equipment and premium products to ensure your home and garments are pristine, every single time.</p>
                             </div>
                             <!-- Feature Card 2 -->
                             <div class="flex flex-col items-center text-center p-6">
@@ -212,23 +291,23 @@
                 </section>
                 
                 <!-- Testimonials Section -->
-                <section id="testimonials" class="py-24 bg-brand-bg-alt">
+                <section id="testimonials" class="py-24 bg-brand-bg">
                     <div class="container mx-auto px-6">
                         <div class="text-center mb-16">
                             <h2 class="text-4xl md:text-5xl font-extrabold text-gray-800">What Our Customers Say</h2>
                             <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-                                We are proud to be Kampala's trusted choice for laundry services.
+                                We are proud to be Kampala's trusted choice for cleaning services.
                             </p>
                         </div>
                         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                            <!-- Testimonial Card 1 -->
                             <div class="bg-white p-8 rounded-xl shadow-lg flex flex-col items-center text-center h-full">
                                 <div class="flex justify-center mb-4">
-                                    <svg class="w-6 h-6 text-yellow-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                                    <svg class="w-6 h-6 text-yellow-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                                    <svg class="w-6 h-6 text-yellow-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                                    <svg class="w-6 h-6 text-yellow-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                                    <svg class="w-6 h-6 text-yellow-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                    <svg class="w-6 h-6 text-yellow-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                    <svg class="w-6 h-6 text-yellow-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                    <svg class="w-6 h-6 text-yellow-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                    <svg class="w-6 h-6 text-yellow-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                    <svg class="w-6 h-6 text-yellow-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                                 </div>
                                 <p class="text-gray-600 italic mb-6 flex-grow">"Fast and thoughtful work they do, very passionate about the customer's needs."</p>
                                 <h4 class="font-bold text-lg text-brand-green">- Lexyr</h4>
@@ -236,11 +315,11 @@
                             <!-- Testimonial Card 2 -->
                             <div class="bg-white p-8 rounded-xl shadow-lg flex flex-col items-center text-center h-full">
                                 <div class="flex justify-center mb-4">
-                                    <svg class="w-6 h-6 text-yellow-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                                    <svg class="w-6 h-6 text-yellow-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                                    <svg class="w-6 h-6 text-yellow-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                                    <svg class="w-6 h-6 text-yellow-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                                    <svg class="w-6 h-6 text-yellow-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                    <svg class="w-6 h-6 text-yellow-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                    <svg class="w-6 h-6 text-yellow-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                    <svg class="w-6 h-6 text-yellow-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                    <svg class="w-6 h-6 text-yellow-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                    <svg class="w-6 h-6 text-yellow-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                                 </div>
                                 <p class="text-gray-600 italic mb-6 flex-grow">"The best plug in Mulago! The services are quick and the quality is top-notch. I would advise you all to pass by."</p>
                                 <h4 class="font-bold text-lg text-brand-green">- Jacobs King</h4>
@@ -248,11 +327,11 @@
                             <!-- Testimonial Card 3 -->
                             <div class="bg-white p-8 rounded-xl shadow-lg flex flex-col items-center text-center h-full">
                                 <div class="flex justify-center mb-4">
-                                    <svg class="w-6 h-6 text-yellow-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                                    <svg class="w-6 h-6 text-yellow-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                                    <svg class="w-6 h-6 text-yellow-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                                    <svg class="w-6 h-6 text-yellow-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                                    <svg class="w-6 h-6 text-yellow-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                    <svg class="w-6 h-6 text-yellow-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                    <svg class="w-6 h-6 text-yellow-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                    <svg class="w-6 h-6 text-yellow-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                    <svg class="w-6 h-6 text-yellow-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                    <svg class="w-6 h-6 text-yellow-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                                 </div>
                                 <p class="text-gray-600 italic mb-6 flex-grow">"Sparzine is a lifesaver! My suits have never looked better, and their service is always quick and professional. The only place I trust in Kampala for my dry cleaning."</p>
                                 <h4 class="font-bold text-lg text-brand-green">- David K.</h4>
@@ -262,12 +341,12 @@
                 </section>
                 
                 <!-- Contact Section -->
-                <section id="contact" class="py-24 bg-brand-bg">
+                <section id="contact" class="py-24 bg-brand-bg-alt">
                     <div class="container mx-auto px-6">
                         <div class="text-center mb-16">
                             <h2 class="text-4xl md:text-5xl font-extrabold text-gray-800">Get in Touch</h2>
                             <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-                                Have a question or ready to drop off your laundry? We're here to help!
+                                Have a question or ready to schedule a service? We're here to help!
                             </p>
                         </div>
                         <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-0 rounded-2xl shadow-2xl overflow-hidden">
@@ -294,21 +373,19 @@
                                             </div>
                                             <div class="ml-4">
                                                 <h3 class="text-lg font-semibold text-white">Call Us</h3>
-                                                <div class="text-green-100"><p>+256 763 980 774</p></div>
+                                                <div class="text-green-100"><p>+256 707 128 442</p></div>
                                             </div>
                                         </div>
                                         <!-- WhatsApp -->
                                         <div class="flex items-start">
-                                            <div class="flex-shrink-0 h-12 w-12 flex items-center justify-center bg-white/20 text-white rounded-full">
-                                               <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                                  <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.886-.001 2.269.655 4.505 1.905 6.344l-1.225 4.485 4.635-1.218zM8.332 9.55c-.275-.125-.522-.188-.91-.188-.388 0-.687.063-.91.125-.224.063-.487.25-.688.438-.201.188-.412.438-.525.688-.112.25-.187.563-.187.91 0 .438.063.813.188 1.125.125.313.313.65.563.938.25.287.562.625.91.938.349.313.781.688 1.281 1.063.5.375 1.063.719 1.688.938.625.219 1.219.344 1.781.344.563 0 1.063-.094 1.438-.281.375-.188.813-.438 1.156-1.031.344-.594.5-1.188.5-1.781s-.063-1.094-.125-1.219c-.063-.125-.219-.188-.438-.188-.219 0-.412.063-.594.125-.188.063-.375.125-.625.219-.25.094-.438.125-.594.063-.156-.063-.531-.25-.938-.594-.406-.344-.75-.75-.938-1.156-.188-.406-.094-.75.063-.938.156-.188.344-.344.5-.438.156-.094.281-.125.438-.125.156 0 .344.063.5.188.156.125.313.313.438.563.125.25.25.438.375.563.125.125.25.188.438.188.188 0 .344-.063.469-.188.125-.125.219-.313.281-.563.063-.25.094-.531.094-.781s-.063-.5-.188-.688c-.125-.188-.313-.344-.563-.438-.25-.094-.563-.125-.91-.125s-.625.031-.813.094c-.188.063-.438.156-.625.281z" />
-                                                </svg>
+                                            <div class="flex-shrink-0 h-12 w-12 flex items-center justify-center bg-white/20 text-white rounded-full p-2">
+                                               <img src="https://www.freeiconspng.com/uploads/logo-whatsapp-png-image-2.png" alt="WhatsApp Logo" class="h-8 w-8 object-contain">
                                             </div>
                                             <div class="ml-4">
                                                 <h3 class="text-lg font-semibold text-white">WhatsApp Us</h3>
                                                 <div class="text-green-100">
-                                                    <a href="https://wa.me/256763980774" target="_blank" rel="noopener noreferrer" class="hover:underline">
-                                                        +256 763 980 774
+                                                    <a href="https://wa.me/256707128442" target="_blank" rel="noopener noreferrer" class="hover:underline">
+                                                        +256 707 128 442
                                                     </a>
                                                 </div>
                                             </div>
@@ -368,13 +445,14 @@
                 <div class="container mx-auto px-6 py-12">
                     <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                         <div class="col-span-1 md:col-span-2">
-                            <h3 class="text-2xl font-bold text-brand-green-light">Sparzine Laundromat</h3>
-                            <p class="mt-2 text-gray-400 max-w-sm">Your trusted partner for fresh, clean clothes in Kampala. We combine modern technology with a personal touch.</p>
+                            <h3 class="text-2xl font-bold text-brand-green-light">Sparzine Laundromat & Cleaning Services</h3>
+                            <p class="mt-2 text-gray-400 max-w-sm">Your trusted partner for a fresh, clean home and wardrobe in Kampala. We combine modern technology with a personal touch.</p>
                         </div>
                         <div>
                             <h4 class="font-semibold text-lg mb-4">Quick Links</h4>
                             <ul class="space-y-2">
                                 <li><a href="#services" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+                                 <li><a href="#products" class="text-gray-400 hover:text-white transition-colors">Products</a></li>
                                 <li><a href="#why-us" class="text-gray-400 hover:text-white transition-colors">Why Us</a></li>
                                 <li><a href="#testimonials" class="text-gray-400 hover:text-white transition-colors">Testimonials</a></li>
                                 <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
@@ -384,23 +462,21 @@
                             <h4 class="font-semibold text-lg mb-4">Contact Us</h4>
                             <ul class="space-y-2 text-gray-400">
                                 <li>Mawanda Road, Kampala, Uganda</li>
-                                <li><a href="tel:+256763980774" class="hover:text-white transition-colors">+256 763 980 774</a></li>
-                                <li><a href="https://wa.me/256763980774" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">WhatsApp</a></li>
+                                <li><a href="tel:+256707128442" class="hover:text-white transition-colors">+256 707 128 442</a></li>
+                                <li><a href="https://wa.me/256707128442" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">WhatsApp</a></li>
                                 <li><a href="mailto:sparzineinvestments@gmail.com" class="hover:text-white transition-colors">sparzineinvestments@gmail.com</a></li>
                             </ul>
                         </div>
                     </div>
                     <div class="mt-12 border-t border-gray-700 pt-8 text-center text-gray-500">
-                        <p>&copy; 2024 Sparzine Laundromat. All Rights Reserved.</p>
+                        <p>&copy; 2024 Sparzine Laundromat & Cleaning Services. All Rights Reserved.</p>
                     </div>
                 </div>
             </footer>
 
             <!-- Floating WhatsApp Button -->
-            <a href="https://wa.me/256763980774" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-all transform hover:scale-110 z-50 flex items-center justify-center" aria-label="Chat on WhatsApp">
-                <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.886-.001 2.269.655 4.505 1.905 6.344l-1.225 4.485 4.635-1.218zM8.332 9.55c-.275-.125-.522-.188-.91-.188-.388 0-.687.063-.91.125-.224.063-.487.25-.688.438-.201.188-.412.438-.525.688-.112.25-.187.563-.187.91 0 .438.063.813.188 1.125.125.313.313.65.563.938.25.287.562.625.91.938.349.313.781.688 1.281 1.063.5.375 1.063.719 1.688.938.625.219 1.219.344 1.781.344.563 0 1.063-.094 1.438-.281.375-.188.813-.438 1.156-1.031.344-.594.5-1.188.5-1.781s-.063-1.094-.125-1.219c-.063-.125-.219-.188-.438-.188-.219 0-.412.063-.594.125-.188.063-.375.125-.625.219-.25.094-.438.125-.594.063-.156-.063-.531-.25-.938-.594-.406-.344-.75-.75-.938-1.156-.188-.406-.094-.75.063-.938.156-.188.344-.344.5-.438.156-.094.281-.125.438-.125.156 0 .344.063.5.188.156.125.313.313.438.563.125.25.25.438.375.563.125.125.25.188.438.188.188 0 .344-.063.469-.188.125-.125.219-.313.281-.563.063-.25.094-.531.094-.781s-.063-.5-.188-.688c-.125-.188-.313-.344-.563-.438-.25-.094-.563-.125-.91-.125s-.625.031-.813.094c-.188.063-.438.156-.625.281z" />
-                </svg>
+            <a href="https://wa.me/256707128442" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-all transform hover:scale-110 z-50 flex items-center justify-center" aria-label="Chat on WhatsApp">
+                <img src="https://www.freeiconspng.com/uploads/logo-whatsapp-png-image-2.png" alt="Chat on WhatsApp" class="h-8 w-8">
             </a>
         </div>
     </div>
@@ -418,7 +494,7 @@
             const handleScroll = () => {
                 if (window.scrollY > 10) {
                     header.classList.add('bg-white', 'shadow-md');
-                    header.classList.remove('bg-transparent');
+                    header.classList.remove('bg-transparent', 'text-white');
                 } else {
                     if (!mobileMenu.classList.contains('active')) {
                         header.classList.remove('bg-white', 'shadow-md');
@@ -438,7 +514,7 @@
                 // Keep header background when menu is open
                 if (!isOpen) {
                     header.classList.add('bg-white', 'shadow-md');
-                    header.classList.remove('bg-transparent');
+                    header.classList.remove('bg-transparent', 'text-white');
                 } else {
                     // Re-evaluate scroll position when closing
                     handleScroll();
@@ -473,10 +549,11 @@
             // Set current year in footer
             const yearSpan = document.querySelector('footer p');
             if(yearSpan) {
-                yearSpan.innerHTML = `&copy; ${new Date().getFullYear()} Sparzine Laundromat. All Rights Reserved.`;
+                yearSpan.innerHTML = `&copy; ${new Date().getFullYear()} Sparzine Laundromat & Cleaning Services. All Rights Reserved.`;
             }
 
         });
     </script>
 </body>
 </html>
+
