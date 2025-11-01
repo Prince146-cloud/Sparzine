@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sparzine Laundromat | Premium Laundry & Dry Cleaning in Kampala</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- SUPABASE CLIENT LIBRARY -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <link rel="icon" href="https://i.imgur.com/p1lpP9Q.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,6 +32,39 @@
         /* Add minor style adjustments if needed */
         body {
             font-family: 'Poppins', sans-serif;
+        }
+        /* Simple modal styles */
+        .modal {
+            transition: opacity 0.25s ease;
+        }
+        .modal-content {
+            transition: transform 0.25s ease;
+        }
+        /* Simple edit button style */
+        .edit-btn {
+            font-size: 0.75rem; /* 12px */
+            padding: 0.25rem 0.5rem; /* 4px 8px */
+            border-radius: 0.375rem; /* 6px */
+            background-color: #3b82f6; /* blue-500 */
+            color: white;
+            font-weight: 600;
+            margin-left: 0.5rem; /* 8px */
+            cursor: pointer;
+        }
+        .edit-btn:hover {
+            background-color: #2563eb; /* blue-600 */
+        }
+        /* Style for product edit button */
+        .product-edit-btn {
+            background-color: #6d28d9; /* violet-700 */
+            width: 100%;
+            padding: 0.5rem; /* 8px */
+            margin-left: 0;
+            margin-bottom: 0.75rem; /* 12px */
+            font-size: 0.875rem; /* 14px */
+        }
+        .product-edit-btn:hover {
+            background-color: #5b21b6; /* violet-800 */
         }
     </style>
 </head>
@@ -215,7 +250,7 @@
                                                 <h3 class="text-lg font-semibold text-gray-800">Clothes (Normal wash)</h3>
                                                 <p class="text-sm text-gray-500">Per kilogram</p>
                                             </div>
-                                            <div class="text-lg font-bold text-brand-green">3,000/-</div>
+                                            <div class="text-lg font-bold text-brand-green"><span id="price-clothes-kg">3,000</span>/- <button id="edit-clothes-kg" class="edit-btn hidden">Edit</button></div>
                                         </li>
                                         <!-- Item -->
                                         <li class="flex justify-between items-center py-3 border-b border-gray-200">
@@ -223,7 +258,7 @@
                                                 <h3 class="text-lg font-semibold text-gray-800">Curtains</h3>
                                                 <p class="text-sm text-gray-500">Per kilogram</p>
                                             </div>
-                                            <div class="text-lg font-bold text-brand-green">5,000/-</div>
+                                            <div class="text-lg font-bold text-brand-green"><span id="price-curtains-kg">5,000</span>/- <button id="edit-curtains-kg" class="edit-btn hidden">Edit</button></div>
                                         </li>
                                         <!-- Item -->
                                         <li class="flex justify-between items-center py-3 border-b border-gray-200">
@@ -231,7 +266,7 @@
                                                 <h3 class="text-lg font-semibold text-gray-800">Jackets</h3>
                                                 <p class="text-sm text-gray-500">Each</p>
                                             </div>
-                                            <div class="text-lg font-bold text-brand-green">3,000/-</div>
+                                            <div class="text-lg font-bold text-brand-green"><span id="price-jackets-each">3,000</span>/- <button id="edit-jackets-each" class="edit-btn hidden">Edit</button></div>
                                         </li>
                                         <!-- Item -->
                                         <li class="flex justify-between items-center py-3 border-b border-gray-200">
@@ -239,7 +274,7 @@
                                                 <h3 class="text-lg font-semibold text-gray-800">Ironing only</h3>
                                                 <p class="text-sm text-gray-500">Each item</p>
                                             </div>
-                                            <div class="text-lg font-bold text-brand-green">2,000/-</div>
+                                            <div class="text-lg font-bold text-brand-green"><span id="price-ironing-each">2,000</span>/- <button id="edit-ironing-each" class="edit-btn hidden">Edit</button></div>
                                         </li>
                                         <!-- Item -->
                                         <li class="flex justify-between items-center py-3 border-b border-gray-200">
@@ -247,7 +282,7 @@
                                                 <h3 class="text-lg font-semibold text-gray-800">Ironing only</h3>
                                                 <p class="text-sm text-gray-500">Per kilogram</p>
                                             </div>
-                                            <div class="text-lg font-bold text-brand-green">4,000/-</div>
+                                            <div class="text-lg font-bold text-brand-green"><span id="price-ironing-kg">4,000</span>/- <button id="edit-ironing-kg" class="edit-btn hidden">Edit</button></div>
                                         </li>
                                         <!-- Item -->
                                         <li class="flex justify-between items-center py-3 border-b border-gray-200">
@@ -255,7 +290,7 @@
                                                 <h3 class="text-lg font-semibold text-gray-800">Suits</h3>
                                                 <p class="text-sm text-gray-500">Each</p>
                                             </div>
-                                            <div class="text-lg font-bold text-brand-green">20,000/-</div>
+                                            <div class="text-lg font-bold text-brand-green"><span id="price-suits-each">20,000</span>/- <button id="edit-suits-each" class="edit-btn hidden">Edit</button></div>
                                         </li>
                                         <!-- Item -->
                                         <li class="flex justify-between items-center py-3 border-b border-gray-200">
@@ -263,7 +298,7 @@
                                                 <h3 class="text-lg font-semibold text-gray-800">Duvets (Small)</h3>
                                                 <p class="text-sm text-gray-500">Each</p>
                                             </div>
-                                            <div class="text-lg font-bold text-brand-green">10,000/-</div>
+                                            <div class="text-lg font-bold text-brand-green"><span id="price-duvets-small">10,000</span>/- <button id="edit-duvets-small" class="edit-btn hidden">Edit</button></div>
                                         </li>
                                         <!-- Item -->
                                         <li class="flex justify-between items-center py-3"> <!-- Last item no border -->
@@ -271,7 +306,7 @@
                                                 <h3 class="text-lg font-semibold text-gray-800">Duvets (Large)</h3>
                                                 <p class="text-sm text-gray-500">Each</p>
                                             </div>
-                                            <div class="text-lg font-bold text-brand-green">15,000/-</div>
+                                            <div class="text-lg font-bold text-brand-green"><span id="price-duvets-large">15,000</span>/- <button id="edit-duvets-large" class="edit-btn hidden">Edit</button></div>
                                         </li>
                                     </ul>
                                 </div>
@@ -285,7 +320,7 @@
                                                 <h3 class="text-lg font-semibold text-gray-800">Blanket</h3>
                                                 <p class="text-sm text-gray-500">Each</p>
                                             </div>
-                                            <div class="text-lg font-bold text-brand-green">15,000/-</div>
+                                            <div class="text-lg font-bold text-brand-green"><span id="price-blanket-each">15,000</span>/- <button id="edit-blanket-each" class="edit-btn hidden">Edit</button></div>
                                         </li>
                                         <!-- Item -->
                                         <li class="flex justify-between items-center py-3 border-b border-gray-200">
@@ -293,7 +328,7 @@
                                                 <h3 class="text-lg font-semibold text-gray-800">Bed Sheet</h3>
                                                 <p class="text-sm text-gray-500">Each</p>
                                             </div>
-                                            <div class="text-lg font-bold text-brand-green">3,000/-</div>
+                                            <div class="text-lg font-bold text-brand-green"><span id="price-bedsheet-each">3,000</span>/- <button id="edit-bedsheet-each" class="edit-btn hidden">Edit</button></div>
                                         </li>
                                         <!-- Item -->
                                         <li class="flex justify-between items-center py-3 border-b border-gray-200">
@@ -301,7 +336,7 @@
                                                 <h3 class="text-lg font-semibold text-gray-800">Kanzu</h3>
                                                 <p class="text-sm text-gray-500">Each</p>
                                             </div>
-                                            <div class="text-lg font-bold text-brand-green">7,000/-</div>
+                                            <div class="text-lg font-bold text-brand-green"><span id="price-kanzu-each">7,000</span>/- <button id="edit-kanzu-each" class="edit-btn hidden">Edit</button></div>
                                         </li>
                                         <!-- Item -->
                                         <li class="flex justify-between items-center py-3 border-b border-gray-200">
@@ -309,7 +344,7 @@
                                                 <h3 class="text-lg font-semibold text-gray-800">Gomesi</h3>
                                                 <p class="text-sm text-gray-500">Each</p>
                                             </div>
-                                            <div class="text-lg font-bold text-brand-green">15,000/-</div>
+                                            <div class="text-lg font-bold text-brand-green"><span id="price-gomesi-each">15,000</span>/- <button id="edit-gomesi-each" class="edit-btn hidden">Edit</button></div>
                                         </li>
                                         <!-- Item -->
                                         <li class="flex justify-between items-center py-3 border-b border-gray-200">
@@ -317,7 +352,7 @@
                                                 <h3 class="text-lg font-semibold text-gray-800">School Bag</h3>
                                                 <p class="text-sm text-gray-500">Each</p>
                                             </div>
-                                            <div class="text-lg font-bold text-brand-green">5,000/-</div>
+                                            <div class="text-lg font-bold text-brand-green"><span id="price-schoolbag-each">5,000</span>/- <button id="edit-schoolbag-each" class="edit-btn hidden">Edit</button></div>
                                         </li>
                                         <!-- Item -->
                                         <li class="flex justify-between items-center py-3 border-b border-gray-200">
@@ -325,7 +360,7 @@
                                                 <h3 class="text-lg font-semibold text-gray-800">Suitcase (Small)</h3>
                                                 <p class="text-sm text-gray-500">Each</p>
                                             </div>
-                                            <div class="text-lg font-bold text-brand-green">10,000/-</div>
+                                            <div class="text-lg font-bold text-brand-green"><span id="price-suitcase-small">10,000</span>/- <button id="edit-suitcase-small" class="edit-btn hidden">Edit</button></div>
                                         </li>
                                         <!-- Item -->
                                         <li class="flex justify-between items-center py-3 border-b border-gray-200">
@@ -333,7 +368,7 @@
                                                 <h3 class="text-lg font-semibold text-gray-800">Suitcase (Big)</h3>
                                                 <p class="text-sm text-gray-500">Each</p>
                                             </div>
-                                            <div class="text-lg font-bold text-brand-green">15,000/-</div>
+                                            <div class="text-lg font-bold text-brand-green"><span id="price-suitcase-big">15,000</span>/- <button id="edit-suitcase-big" class="edit-btn hidden">Edit</button></div>
                                         </li>
                                         <!-- Item -->
                                         <li class="flex justify-between items-center py-3"> <!-- Last item no border -->
@@ -341,7 +376,7 @@
                                                 <h3 class="text-lg font-semibold text-gray-800">Shoes (Pair)</h3>
                                                 <p class="text-sm text-gray-500">Each</p>
                                             </div>
-                                            <div class="text-lg font-bold text-brand-green">3,000/-</div>
+                                            <div class="text-lg font-bold text-brand-green"><span id="price-shoes-pair">3,000</span>/- <button id="edit-shoes-pair" class="edit-btn hidden">Edit</button></div>
                                         </li>
                                     </ul>
                                 </div>
@@ -367,10 +402,12 @@
                             
                             <!-- Product Card 1 -->
                             <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden flex flex-col">
-                                <img src="https://lh3.googleusercontent.com/d/18LrgOln8IVBA7yBuX6g-axVLL8-lYpqb" alt="Liquid Soap Dispenser" class="w-full h-64 object-cover" onerror="this.src='https://placehold.co/400x400/22c55e/ffffff?text=Image+Not+Found'">
+                                <img src="https://lh3.googleusercontent.com/d/18LrgOln8IVBA7yBuX6g-axVLL8-lYpqb" alt="Liquid Soap Dispenser" class="w-full h-64 object-cover" id="product-img-product-1" onerror="this.src='https://placehold.co/400x400/22c55e/ffffff?text=Image+Not+Found'">
                                 <div class="p-6 flex flex-col flex-grow">
-                                    <h3 class="text-xl font-bold text-gray-800 mb-2">Dry cleaning powder</h3>
-                                    <a href="https://wa.me/256707128442?text=I'm%20interested%20in%20ordering%20the%20Dry%20cleaning%20powder" target="_blank" rel="noopener noreferrer" class="bg-brand-green-light text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-opacity-90 transition-all mt-4 inline-block text-center mt-auto">
+                                    <h3 class="text-xl font-bold text-gray-800 mb-2" id="product-name-product-1">Dry cleaning powder</h3>
+                                    <!-- NEW EDIT BUTTON -->
+                                    <button id="edit-product-1" class="edit-btn product-edit-btn hidden">Edit Product</button>
+                                    <a href="https://wa.me/256707128442?text=I'm%20interested%20in%20ordering%20the%20Dry%20cleaning%20powder" target="_blank" rel="noopener noreferrer" class="bg-brand-green-light text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-opacity-90 transition-all inline-block text-center mt-auto" id="product-link-product-1">
                                         Order on WhatsApp
                                     </a>
                                 </div>
@@ -378,10 +415,12 @@
                             
                             <!-- Product Card 2 -->
                             <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden flex flex-col">
-                                <img src="https://lh3.googleusercontent.com/d/1r0N2kezBHPWxKfb4fljXM60A5esbHkbE" alt="Jumbo Paper Towel" class="w-full h-64 object-cover" onerror="this.src='https://placehold.co/400x400/22c55e/ffffff?text=Image+Not+Found'">
+                                <img src="https://lh3.googleusercontent.com/d/1r0N2kezBHPWxKfb4fljXM60A5esbHkbE" alt="Jumbo Paper Towel" class="w-full h-64 object-cover" id="product-img-product-2" onerror="this.src='https://placehold.co/400x400/22c55e/ffffff?text=Image+Not+Found'">
                                 <div class="p-6 flex flex-col flex-grow">
-                                    <h3 class="text-xl font-bold text-gray-800 mb-2">wool& delicate fabric wash</h3>
-                                     <a href="https://wa.me/256707128442?text=I'm%20interested%20in%20ordering%20the%20wool%26%20delicate%20fabric%20wash" target="_blank" rel="noopener noreferrer" class="bg-brand-green-light text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-opacity-90 transition-all mt-4 inline-block text-center mt-auto">
+                                    <h3 class="text-xl font-bold text-gray-800 mb-2" id="product-name-product-2">wool& delicate fabric wash</h3>
+                                     <!-- NEW EDIT BUTTON -->
+                                    <button id="edit-product-2" class="edit-btn product-edit-btn hidden">Edit Product</button>
+                                     <a href="https://wa.me/256707128442?text=I'm%20interested%20in%20ordering%20the%20wool%26%20delicate%20fabric%20wash" target="_blank" rel="noopener noreferrer" class="bg-brand-green-light text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-opacity-90 transition-all inline-block text-center mt-auto" id="product-link-product-2">
                                         Order on WhatsApp
                                     </a>
                                 </div>
@@ -389,10 +428,12 @@
 
                             <!-- Product Card 3 -->
                             <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden flex flex-col">
-                                <img src="https://lh3.googleusercontent.com/d/15xww3JSdrsykBgzUqYmlIl_A9a0hH2hn" alt="Paper Hand Towels" class="w-full h-64 object-cover" onerror="this.src='https://placehold.co/400x400/22c55e/ffffff?text=Image+Not+Found'">
+                                <img src="https://lh3.googleusercontent.com/d/15xww3JSdrsykBgzUqYmlIl_A9a0hH2hn" alt="Paper Hand Towels" class="w-full h-64 object-cover" id="product-img-product-3" onerror="this.src='https://placehold.co/400x400/22c55e/ffffff?text=Image+Not+Found'">
                                 <div class="p-6 flex flex-col flex-grow">
-                                    <h3 class="text-xl font-bold text-gray-800 mb-2">Suit freshener spray</h3>
-                                     <a href="https://wa.me/256707128442?text=I'm%20interested%20in%20ordering%20the%20Suit%20freshener%20spray" target="_blank" rel="noopener noreferrer" class="bg-brand-green-light text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-opacity-90 transition-all mt-4 inline-block text-center mt-auto">
+                                    <h3 class="text-xl font-bold text-gray-800 mb-2" id="product-name-product-3">Suit freshener spray</h3>
+                                     <!-- NEW EDIT BUTTON -->
+                                    <button id="edit-product-3" class="edit-btn product-edit-btn hidden">Edit Product</button>
+                                     <a href="https://wa.me/256707128442?text=I'm%20interested%20in%20ordering%20the%20Suit%20freshener%20spray" target="_blank" rel="noopener noreferrer" class="bg-brand-green-light text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-opacity-90 transition-all inline-block text-center mt-auto" id="product-link-product-3">
                                         Order on WhatsApp
                                     </a>
                                 </div>
@@ -400,47 +441,18 @@
 
                             <!-- Product Card 4 -->
                             <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden flex flex-col">
-                                <img src="https://lh3.googleusercontent.com/d/1723bV-c6Q5AsHeEtzi0AItktVmRRDCh-" alt="Towel Dispenser" class="w-full h-64 object-cover" onerror="this.src='https://placehold.co/400x400/22c55e/ffffff?text=Image+Not+Found'">
+                                <img src="https://lh3.googleusercontent.com/d/1723bV-c6Q5AsHeEtzi0AItktVmRRDCh-" alt="Towel Dispenser" class="w-full h-64 object-cover" id="product-img-product-4" onerror="this.src='https://placehold.co/400x400/22c55e/ffffff?text=Image+Not+Found'">
                                 <div class="p-6 flex flex-col flex-grow">
-                                    <h3 class="text-xl font-bold text-gray-800 mb-2">Stain&spot remover</h3>
-                                     <a href="https://wa.me/256707128442?text=I'm%20interested%20in%20ordering%20the%20Stain%26spot%20remover" target="_blank" rel="noopener noreferrer" class="bg-brand-green-light text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-opacity-90 transition-all mt-4 inline-block text-center mt-auto">
+                                    <h3 class="text-xl font-bold text-gray-800 mb-2" id="product-name-product-4">Stain&spot remover</h3>
+                                     <!-- NEW EDIT BUTTON -->
+                                    <button id="edit-product-4" class="edit-btn product-edit-btn hidden">Edit Product</button>
+                                     <a href="https://wa.me/256707128442?text=I'm%20interested%20in%20ordering%20the%20Stain%26spot%20remover" target="_blank" rel="noopener noreferrer" class="bg-brand-green-light text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-opacity-90 transition-all inline-block text-center mt-auto" id="product-link-product-4">
                                         Order on WhatsApp
                                     </a>
                                 </div>
                             </div>
                             
-                            <!-- Product Card 2 -->
-                            <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden flex flex-col">
-                                <img src="https://lh3.googleusercontent.com/d/1r0N2kezBHPWxKfb4fljXM60A5esbHkbE" alt="Jumbo Paper Towel" class="w-full h-64 object-cover" onerror="this.src='https://placehold.co/400x400/22c55e/ffffff?text=Image+Not+Found'">
-                                <div class="p-6 flex flex-col flex-grow">
-                                    <h3 class="text-xl font-bold text-gray-800 mb-2">Jumbo Paper Towel</h3>
-                                     <a href="https://wa.me/256707128442?text=I'm%20interested%20in%20ordering%20the%20Jumbo%20Paper%20Towel" target="_blank" rel="noopener noreferrer" class="bg-brand-green-light text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-opacity-90 transition-all mt-4 inline-block text-center mt-auto">
-                                        Order on WhatsApp
-                                    </a>
-                                </div>
-                            </div>
-
-                            <!-- Product Card 3 -->
-                            <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden flex flex-col">
-                                <img src="https://lh3.googleusercontent.com/d/15xww3JSdrsykBgzUqYmlIl_A9a0hH2hn" alt="Paper Hand Towels" class="w-full h-64 object-cover" onerror="this.src='https://placehold.co/400x400/22c55e/ffffff?text=Image+Not+Found'">
-                                <div class="p-6 flex flex-col flex-grow">
-                                    <h3 class="text-xl font-bold text-gray-800 mb-2">Paper Hand Towels</h3>
-                                     <a href="https://wa.me/256707128442?text=I'm%20interested%20in%20ordering%20the%20Paper%20Hand%20Towels" target="_blank" rel="noopener noreferrer" class="bg-brand-green-light text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-opacity-90 transition-all mt-4 inline-block text-center mt-auto">
-                                        Order on WhatsApp
-                                    </a>
-                                </div>
-                            </div>
-
-                            <!-- Product Card 4 -->
-                            <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden flex flex-col">
-                                <img src="https://lh3.googleusercontent.com/d/1723bV-c6Q5AsHeEtzi0AItktVmRRDCh-" alt="Towel Dispenser" class="w-full h-64 object-cover" onerror="this.src='https://placehold.co/400x400/22c55e/ffffff?text=Image+Not+Found'">
-                                <div class="p-6 flex flex-col flex-grow">
-                                    <h3 class="text-xl font-bold text-gray-800 mb-2">Towel Dispenser</h3>
-                                     <a href="https://wa.me/256707128442?text=I'm%20interested%20in%20ordering%20the%20Towel%20Dispenser" target="_blank" rel="noopener noreferrer" class="bg-brand-green-light text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-opacity-90 transition-all mt-4 inline-block text-center mt-auto">
-                                        Order on WhatsApp
-                                    </a>
-                                </div>
-                            </div>
+                            <!-- REMOVED LAST 3 PRODUCTS -->
 
                         </div>
                     </div>
@@ -652,6 +664,9 @@
                                 <li><a href="#why-us" class="text-gray-400 hover:text-white transition-colors">Why Us</a></li>
                                 <li><a href="#testimonials" class="text-gray-400 hover:text-white transition-colors">Testimonials</a></li>
                                 <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                                <!-- ADMIN LINKS -->
+                                <li><a href="#" id="admin-login-link" class="text-gray-400 hover:text-white transition-colors">Admin Login</a></li>
+                                <li><a href="#" id="admin-logout-link" class="text-gray-400 hover:text-white transition-colors hidden">Admin Logout</a></li>
                             </ul>
                         </div>
                         <div>
@@ -676,18 +691,101 @@
             </a>
         </div>
     </div>
+
+    <!-- Admin Login Modal -->
+    <div id="admin-modal" class="modal fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 p-4 opacity-0 pointer-events-none">
+        <div class="modal-content bg-white w-full max-w-md p-8 rounded-xl shadow-2xl transform scale-95">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold text-gray-800">Admin Login</h2>
+                <button id="modal-close-btn" class="text-gray-500 hover:text-gray-800 text-4xl leading-none">&times;</button>
+            </div>
+            <form id="admin-login-form">
+                <div class="space-y-4">
+                    <div>
+                        <label for="admin-email" class="block text-sm font-medium text-gray-700">Email</label>
+                        <input type="email" id="admin-email" name="email" required class="mt-1 w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-brand-green-light focus:border-brand-green-light transition" />
+                    </div>
+                    <div>
+                        <label for="admin-password" class="block text-sm font-medium text-gray-700">Password</label>
+                        <input type="password" id="admin-password" name="password" required class="mt-1 w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-brand-green-light focus:border-brand-green-light transition" />
+                    </div>
+                    <button type="submit" id="admin-login-submit" class="w-full bg-brand-green text-white px-6 py-3 rounded-lg font-semibold text-lg hover:bg-opacity-90 transition-all">
+                        Login
+                    </button>
+                    <p id="admin-error-msg" class="text-red-500 text-sm hidden"></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- NEW Price Edit Modal -->
+    <div id="price-modal" class="modal fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 p-4 opacity-0 pointer-events-none">
+        <div class="modal-content bg-white w-full max-w-md p-8 rounded-xl shadow-2xl transform scale-95">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold text-gray-800">Edit Price</h2>
+                <button id="price-modal-close-btn" class="text-gray-500 hover:text-gray-800 text-4xl leading-none">&times;</button>
+            </div>
+            <form id="price-edit-form">
+                <input type="hidden" id="price-edit-id" />
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Item</label>
+                        <p id="price-edit-name" class="mt-1 text-lg font-semibold text-gray-900"></p>
+                    </div>
+                    <div>
+                        <label for="price-edit-value" class="block text-sm font-medium text-gray-700">New Price (UGX)</label>
+                        <input type="number" id="price-edit-value" name="price-value" required min="0" class="mt-1 w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-brand-green-light focus:border-brand-green-light transition" />
+                    </div>
+                    <button type="submit" id="price-edit-submit" class="w-full bg-blue-500 text-white px-6 py-3 rounded-lg font-semibold text-lg hover:bg-blue-600 transition-all">
+                        Save Changes
+                    </button>
+                    <p id="price-error-msg" class="text-red-500 text-sm hidden"></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Product Edit Modal -->
+    <div id="product-modal" class="modal fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 p-4 opacity-0 pointer-events-none">
+        <div class="modal-content bg-white w-full max-w-md p-8 rounded-xl shadow-2xl transform scale-95">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold text-gray-800">Edit Product</h2>
+                <button id="product-modal-close-btn" class="text-gray-500 hover:text-gray-800 text-4xl leading-none">&times;</button>
+            </div>
+            <form id="product-edit-form">
+                <input type="hidden" id="product-edit-id" />
+                <div class="space-y-4">
+                    <div>
+                        <label for="product-edit-name" class="block text-sm font-medium text-gray-700">Product Name</label>
+                        <input type="text" id="product-edit-name" name="product-name" required class="mt-1 w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-brand-green-light focus:border-brand-green-light transition" />
+                    </div>
+                    <div>
+                        <label for="product-edit-image" class="block text-sm font-medium text-gray-700">Image URL</label>
+                        <input type="url" id="product-edit-image" name="product-image" required class="mt-1 w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-brand-green-light focus:border-brand-green-light transition" />
+                    </div>
+                    <div>
+                        <label for="product-edit-whatsapp" class="block text-sm font-medium text-gray-700">WhatsApp Text</label>
+                        <textarea id="product-edit-whatsapp" name="product-whatsapp" rows="3" required class="mt-1 w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-brand-green-light focus:border-brand-green-light transition"></textarea>
+                    </div>
+                    <button type="submit" id="product-edit-submit" class="w-full bg-violet-700 text-white px-6 py-3 rounded-lg font-semibold text-lg hover:bg-violet-800 transition-all">
+                        Save Changes
+                    </button>
+                    <p id="product-error-msg" class="text-red-500 text-sm hidden"></p>
+                </div>
+            </form>
+        </div>
+    </div>
     
     <script>
         document.addEventListener('DOMContentLoaded', function () {
+            // Original navigation and footer script
             const header = document.getElementById('header');
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
             const menuOpenIcon = document.getElementById('menu-open-icon');
             const menuCloseIcon = document.getElementById('menu-close-icon');
-            // Select all links, including the new pricing link
             const navLinks = document.querySelectorAll('header nav a, #mobile-menu a, a[href^="#"]');
 
-            // Header scroll effect
             const handleScroll = () => {
                 if (window.scrollY > 10) {
                     header.classList.add('bg-white', 'shadow-md');
@@ -701,28 +799,24 @@
             };
             window.addEventListener('scroll', handleScroll);
 
-            // Mobile menu toggle
             mobileMenuButton.addEventListener('click', () => {
                 const isOpen = mobileMenu.classList.toggle('hidden');
                 mobileMenu.classList.toggle('active', !isOpen);
                 menuOpenIcon.classList.toggle('hidden');
                 menuCloseIcon.classList.toggle('hidden');
                 
-                // Keep header background when menu is open
                 if (!isOpen) {
                     header.classList.add('bg-white', 'shadow-md');
                     header.classList.remove('bg-transparent');
                 } else {
-                    // Re-evaluate scroll position when closing
                     handleScroll();
                 }
             });
 
-            // Smooth scrolling for all anchor links
             navLinks.forEach(link => {
                 link.addEventListener('click', function (e) {
                     const href = this.getAttribute('href');
-                    if (href && href.startsWith('#')) {
+                    if (href && href.startsWith('#') && !href.startsWith('#admin-')) { // Avoid interfering with admin links
                         e.preventDefault();
                         const targetId = href.substring(1);
                         const targetElement = document.getElementById(targetId);
@@ -731,26 +825,410 @@
                            targetElement.scrollIntoView({ behavior: 'smooth' });
                         }
                         
-                        // Close mobile menu if open
                         if (!mobileMenu.classList.contains('hidden')) {
                            mobileMenu.classList.add('hidden');
                            mobileMenu.classList.remove('active');
                            menuOpenIcon.classList.remove('hidden');
                            menuCloseIcon.classList.add('hidden');
-                           handleScroll(); // Check if header should be transparent
+                           handleScroll();
                         }
                     }
                 });
             });
             
-            // Set current year in footer
             const yearSpan = document.querySelector('footer p');
             if(yearSpan) {
                 yearSpan.innerHTML = `&copy; ${new Date().getFullYear()} Sparzine Laundromat. All Rights Reserved.`;
             }
 
+            // --- NEW SUPABASE ADMIN SCRIPT ---
+
+            // 1. Supabase Initialization
+            const supabaseUrl = "https://fuquwpauatayupsjmwvs.supabase.co";
+            const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ1cXV3cGF1YXRheXVwc2ptd3ZzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjE5MzUyMDUsImV4cCI6MjA3NzUxMTIwNX0.SjyRioViPn-cTjucX-AW5SPi4jx-s8alHs8iixQ32PA";
+            const sb = supabase.createClient(supabaseUrl, supabaseKey);
+
+            // 2. DOM Elements
+            // Admin Login Modal
+            const adminModal = document.getElementById('admin-modal');
+            const modalCloseBtn = document.getElementById('modal-close-btn');
+            const adminLoginLink = document.getElementById('admin-login-link');
+            const adminLogoutLink = document.getElementById('admin-logout-link');
+            const adminLoginForm = document.getElementById('admin-login-form');
+            const adminErrorMsg = document.getElementById('admin-error-msg');
+            const adminLoginSubmit = document.getElementById('admin-login-submit');
+            
+            // NEW: Price Edit Modal
+            const priceModal = document.getElementById('price-modal');
+            const priceModalCloseBtn = document.getElementById('price-modal-close-btn');
+            const priceEditForm = document.getElementById('price-edit-form');
+            const priceErrorMsg = document.getElementById('price-error-msg');
+            const priceEditSubmit = document.getElementById('price-edit-submit');
+
+            // Product Edit Modal
+            const productModal = document.getElementById('product-modal');
+            const productModalCloseBtn = document.getElementById('product-modal-close-btn');
+            const productEditForm = document.getElementById('product-edit-form');
+            const productErrorMsg = document.getElementById('product-error-msg');
+            const productEditSubmit = document.getElementById('product-edit-submit');
+
+            // Edit Buttons
+            const priceEditButtons = document.querySelectorAll('.edit-btn:not(.product-edit-btn)');
+            const productEditButtons = document.querySelectorAll('.product-edit-btn');
+
+            // 3. Service IDs
+            const priceIds = [
+                'clothes-kg', 'curtains-kg', 'jackets-each', 'ironing-each', 
+                'ironing-kg', 'suits-each', 'duvets-small', 'duvets-large',
+                'blanket-each', 'bedsheet-each', 'kanzu-each', 'gomesi-each',
+                'schoolbag-each', 'suitcase-small', 'suitcase-big', 'shoes-pair'
+            ];
+            // NEW: Product IDs from your SQL script
+            const productIds = ['product-1', 'product-2', 'product-3', 'product-4'];
+
+            // 4. Helper Functions
+            function formatPrice(price) {
+                // Convert price to number just in case it's a string
+                const priceNum = Number(price);
+                if (isNaN(priceNum)) return price; // Return as-is if not a number
+                return new Intl.NumberFormat('en-US').format(priceNum);
+            }
+
+            // Admin Modal
+            function showAdminModal() {
+                adminModal.classList.remove('opacity-0', 'pointer-events-none');
+                adminModal.querySelector('.modal-content').classList.remove('scale-95');
+            }
+
+            function closeAdminModal() {
+                adminModal.classList.add('opacity-0', 'pointer-events-none');
+                adminModal.querySelector('.modal-content').classList.add('scale-95');
+                adminErrorMsg.classList.add('hidden');
+                adminLoginForm.reset();
+            }
+
+            // NEW: Price Modal
+            function showPriceModal() {
+                priceModal.classList.remove('opacity-0', 'pointer-events-none');
+                priceModal.querySelector('.modal-content').classList.remove('scale-95');
+            }
+
+            function closePriceModal() {
+                priceModal.classList.add('opacity-0', 'pointer-events-none');
+                priceModal.querySelector('.modal-content').classList.add('scale-95');
+                priceErrorMsg.classList.add('hidden');
+                priceEditForm.reset();
+            }
+
+            // Product Modal
+            function showProductModal() {
+                productModal.classList.remove('opacity-0', 'pointer-events-none');
+                productModal.querySelector('.modal-content').classList.remove('scale-95');
+            }
+
+            function closeProductModal() {
+                productModal.classList.add('opacity-0', 'pointer-events-none');
+                productModal.querySelector('.modal-content').classList.add('scale-95');
+                productErrorMsg.classList.add('hidden');
+                productEditForm.reset();
+            }
+
+            // UI Toggle
+            function showAdminUI() {
+                adminLoginLink.classList.add('hidden');
+                adminLogoutLink.classList.remove('hidden');
+                priceEditButtons.forEach(btn => btn.classList.remove('hidden'));
+                productEditButtons.forEach(btn => btn.classList.remove('hidden')); // Show product buttons
+            }
+
+            function hideAdminUI() {
+                adminLoginLink.classList.remove('hidden');
+                adminLogoutLink.classList.add('hidden');
+                priceEditButtons.forEach(btn => btn.classList.add('hidden'));
+                productEditButtons.forEach(btn => btn.classList.add('hidden')); // Hide product buttons
+            }
+
+            // 5. Core Functions
+            
+            // Fetch Prices
+            async function fetchPrices() {
+                const { data, error } = await sb.from('prices').select('*');
+                if (error) {
+                    console.error('Error fetching prices:', error.message);
+                    return;
+                }
+
+                priceIds.forEach(id => {
+                    const priceData = data.find(item => item.service_id === id);
+                    const el = document.getElementById('price-' + id);
+                    if (priceData && el) {
+                        el.textContent = formatPrice(priceData.price);
+                    } else if (el) {
+                        console.warn(`No price data found for service_id: ${id}`);
+                        // Keep default HTML price as fallback
+                    }
+                });
+            }
+
+            // Fetch Products
+            async function fetchProducts() {
+                const { data, error } = await sb.from('products').select('*');
+                if (error) {
+                    console.error('Error fetching products:', error.message);
+                    return;
+                }
+
+                data.forEach(product => {
+                    const id = product.product_id;
+                    const nameEl = document.getElementById('product-name-' + id);
+                    const imgEl = document.getElementById('product-img-' + id);
+                    const linkEl = document.getElementById('product-link-' + id);
+
+                    if (nameEl) nameEl.textContent = product.name;
+                    if (imgEl) imgEl.src = product.image_url;
+                    if (linkEl) {
+                        linkEl.href = `https://wa.me/256707128442?text=${encodeURIComponent(product.whatsapp_text)}`;
+                    }
+                });
+            }
+
+            // Handle Login
+            async function handleLogin(e) {
+                e.preventDefault();
+                adminLoginSubmit.disabled = true;
+                adminLoginSubmit.textContent = 'Logging in...';
+                adminErrorMsg.classList.add('hidden');
+
+                const email = document.getElementById('admin-email').value;
+                const password = document.getElementById('admin-password').value;
+
+                const { error } = await sb.auth.signInWithPassword({ email, password });
+
+                if (error) {
+                    adminErrorMsg.textContent = error.message;
+                    adminErrorMsg.classList.remove('hidden');
+                } else {
+                    closeAdminModal();
+                }
+                adminLoginSubmit.disabled = false;
+                adminLoginSubmit.textContent = 'Login';
+            }
+
+            // Handle Logout
+            async function handleLogout() {
+                await sb.auth.signOut();
+                hideAdminUI();
+            }
+
+            // MODIFIED: Handle Price Edit (Open Modal)
+            function handleEditPrice(service_id, editButtonElement) {
+                // Get current data from the DOM
+                const currentPriceEl = document.getElementById('price-' + service_id);
+                const currentPrice = currentPriceEl.textContent.replace(/,/g, '');
+                
+                // Find the item name from the <h3> tag in the same list item
+                const name = editButtonElement.closest('li').querySelector('h3').textContent;
+
+                // Populate the modal
+                document.getElementById('price-edit-id').value = service_id;
+                document.getElementById('price-edit-name').textContent = name;
+                document.getElementById('price-edit-value').value = currentPrice;
+
+                // Show the modal
+                showPriceModal();
+            }
+
+            // NEW: Handle Price Update (Save to Supabase)
+            async function handlePriceUpdate(e) {
+                e.preventDefault();
+                priceEditSubmit.disabled = true;
+                priceEditSubmit.textContent = 'Saving...';
+                priceErrorMsg.classList.add('hidden');
+
+                // Get data from form
+                const id = document.getElementById('price-edit-id').value;
+                const newPrice = document.getElementById('price-edit-value').value;
+                
+                // Validate
+                const priceNum = parseInt(newPrice);
+                if (isNaN(priceNum) || priceNum < 0) {
+                    priceErrorMsg.textContent = 'Please enter a valid positive number.';
+                    priceErrorMsg.classList.remove('hidden');
+                    priceEditSubmit.disabled = false;
+                    priceEditSubmit.textContent = 'Save Changes';
+                    return;
+                }
+
+                // Optimistic UI Update
+                document.getElementById('price-' + id).textContent = formatPrice(priceNum);
+
+                // Update Supabase
+                const { error } = await sb
+                    .from('prices')
+                    .update({ price: priceNum })
+                    .eq('service_id', id);
+
+                if (error) {
+                    priceErrorMsg.textContent = `Error: ${error.message}`;
+                    priceErrorMsg.classList.remove('hidden');
+                    console.error('Error updating price:', error.message);
+                    // Revert UI on error (optional, but good practice)
+                    // For simplicity, we'll just log the error
+                } else {
+                    console.log(`Price for ${id} updated successfully.`);
+                    closePriceModal();
+                }
+
+                priceEditSubmit.disabled = false;
+                priceEditSubmit.textContent = 'Save Changes';
+            }
+
+
+            // Handle Product Edit (Open Modal)
+            function handleEditProduct(product_id) {
+                // Get current data from the DOM
+                const name = document.getElementById('product-name-' + product_id).textContent;
+                const img = document.getElementById('product-img-' + product_id).src;
+                const link = document.getElementById('product-link-' + product_id).href;
+                
+                let whatsappText = '';
+                try {
+                    const url = new URL(link);
+                    whatsappText = url.searchParams.get('text') || '';
+                } catch (e) {
+                    console.warn('Could not parse WhatsApp link:', e);
+                }
+
+                // Populate the modal
+                document.getElementById('product-edit-id').value = product_id;
+                document.getElementById('product-edit-name').value = name;
+                document.getElementById('product-edit-image').value = img;
+                document.getElementById('product-edit-whatsapp').value = whatsappText;
+
+                // Show the modal
+                showProductModal();
+            }
+
+            // Handle Product Update (Save to Supabase)
+            async function handleProductUpdate(e) {
+                e.preventDefault();
+                productEditSubmit.disabled = true;
+                productEditSubmit.textContent = 'Saving...';
+                productErrorMsg.classList.add('hidden');
+
+                // Get data from form
+                const id = document.getElementById('product-edit-id').value;
+                const name = document.getElementById('product-edit-name').value;
+                const image_url = document.getElementById('product-edit-image').value;
+                const whatsapp_text = document.getElementById('product-edit-whatsapp').value;
+
+                // Optimistic UI Update
+                document.getElementById('product-name-' + id).textContent = name;
+                document.getElementById('product-img-' + id).src = image_url;
+                document.getElementById('product-link-' + id).href = `https://wa.me/256707128442?text=${encodeURIComponent(whatsapp_text)}`;
+
+                // Update Supabase
+                const { error } = await sb
+                    .from('products')
+                    .update({ name, image_url, whatsapp_text })
+                    .eq('product_id', id);
+
+                if (error) {
+                    productErrorMsg.textContent = `Error: ${error.message}`;
+                    productErrorMsg.classList.remove('hidden');
+                    console.error('Error updating product:', error.message);
+                    // Note: We are not reverting the UI here, but you could add that logic
+                } else {
+                    console.log(`Product ${id} updated successfully.`);
+                    closeProductModal();
+                }
+
+                productEditSubmit.disabled = false;
+                productEditSubmit.textContent = 'Save Changes';
+            }
+
+            // 6. Event Listeners
+            // Admin Login
+            adminLoginLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                showAdminModal();
+            });
+            modalCloseBtn.addEventListener('click', closeAdminModal);
+            adminModal.addEventListener('click', (e) => {
+                if (e.target === adminModal) {
+                    closeAdminModal();
+                }
+            });
+            adminLoginForm.addEventListener('submit', handleLogin);
+            adminLogoutLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                handleLogout();
+            });
+
+            // NEW: Price Edit
+            priceModalCloseBtn.addEventListener('click', closePriceModal);
+            priceModal.addEventListener('click', (e) => {
+                if (e.target === priceModal) {
+                    closePriceModal();
+                }
+            });
+            priceEditForm.addEventListener('submit', handlePriceUpdate);
+
+            // Product Edit
+            productModalCloseBtn.addEventListener('click', closeProductModal);
+            productModal.addEventListener('click', (e) => {
+                if (e.target === productModal) {
+                    closeProductModal();
+                }
+            });
+            productEditForm.addEventListener('submit', handleProductUpdate);
+
+            // Price Edit Buttons
+            priceIds.forEach(id => {
+                const editBtn = document.getElementById('edit-' + id);
+                if(editBtn) {
+                    // Pass 'this' (the button element) to the handler
+                    editBtn.addEventListener('click', function() { 
+                        handleEditPrice(id, this); 
+                    });
+                }
+            });
+
+            // Product Edit Buttons
+            productIds.forEach(id => {
+                // Map product_id 'product-1' to button-id 'edit-product-1'
+                const buttonSuffix = id.split('-')[1]; // '1'
+                const editBtn = document.getElementById('edit-product-' + buttonSuffix);
+                if(editBtn) {
+                    editBtn.addEventListener('click', () => handleEditProduct(id));
+                } else {
+                    console.warn('Could not find edit button for product:', 'edit-product-' + buttonSuffix);
+                }
+            });
+
+            // 7. Initial Load
+            fetchPrices(); // Load prices on page start
+            fetchProducts(); // Load products on page start
+
+            // Check session on load
+            sb.auth.getSession().then(({ data: { session } }) => {
+                if (session) {
+                    showAdminUI();
+                } else {
+                    hideAdminUI();
+                }
+            });
+
+            // Listen for auth state changes
+            sb.auth.onAuthStateChange((_event, session) => {
+                if (session) {
+                    showAdminUI();
+                } else {
+                    hideAdminUI();
+                }
+            });
+
         });
     </script>
 </body>
 </html>
-
