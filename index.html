@@ -74,15 +74,15 @@
         <div class="bg-brand-bg text-gray-800 font-sans">
             <!-- Header -->
             <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent">
-                <div class="container mx-auto px-6 py-2 flex justify-between items-center">
+                <div class="container mx-auto px-6 py-2 flex justify-between items-center flex-wrap">
                     <div class="flex items-center cursor-pointer" onclick="document.getElementById('hero').scrollIntoView({ behavior: 'smooth' });">
                         <div class="bg-gray-100 p-1 rounded-full shadow-sm">
                             <img src="https://i.imgur.com/p1lpP9Q.png" alt="Sparzine Laundromat Logo" class="h-14 md:h-16 w-auto" />
                         </div>
                     </div>
                     
-                    <!-- Desktop Nav -->
-                    <nav class="hidden md:flex items-center space-x-8">
+                    <!-- Desktop Nav (NOW VISIBLE ON MOBILE) -->
+                    <nav class="flex flex-wrap justify-center md:justify-end items-center gap-x-4 gap-y-2 md:space-x-8 w-full md:w-auto order-last md:order-none mt-2 md:mt-0">
                         <a href="#services" class="text-gray-600 hover:text-brand-green font-medium transition-colors text-lg">Services</a>
                         <!-- ADDED PRICING LINK -->
                         <a href="#pricing" class="text-gray-600 hover:text-brand-green font-medium transition-colors text-lg">Pricing</a>
@@ -92,31 +92,11 @@
                         <a href="#contact" class="text-gray-600 hover:text-brand-green font-medium transition-colors text-lg">Contact</a>
                     </nav>
 
-                    <!-- Mobile Menu Button -->
-                    <div class="md:hidden">
-                        <button id="mobile-menu-button" class="text-gray-600 focus:outline-none z-50 relative">
-                            <svg id="menu-open-icon" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                            </svg>
-                            <svg id="menu-close-icon" class="w-8 h-8 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                            </svg>
-                        </button>
-                    </div>
+                    <!-- Mobile Menu Button (REMOVED) -->
+
                 </div>
 
-                <!-- Mobile Nav -->
-                <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg absolute top-full left-0 right-0">
-                    <div class="px-4 pt-2 pb-4 space-y-2 text-center">
-                        <a href="#services" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-brand-green hover:bg-gray-50">Services</a>
-                        <!-- ADDED PRICING LINK -->
-                        <a href="#pricing" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-brand-green hover:bg-gray-50">Pricing</a>
-                        <a href="#products" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-brand-green hover:bg-gray-50">Products</a>
-                        <a href="#why-us" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-brand-green hover:bg-gray-50">Why Us</a>
-                        <a href="#testimonials" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-brand-green hover:bg-gray-50">Testimonials</a>
-                        <a href="#contact" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-brand-green hover:bg-gray-50">Contact</a>
-                    </div>
-                </div>
+                <!-- Mobile Nav (REMOVED) -->
             </header>
 
             <main>
@@ -780,10 +760,6 @@
         document.addEventListener('DOMContentLoaded', function () {
             // Original navigation and footer script
             const header = document.getElementById('header');
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const menuOpenIcon = document.getElementById('menu-open-icon');
-            const menuCloseIcon = document.getElementById('menu-close-icon');
             const navLinks = document.querySelectorAll('header nav a, #mobile-menu a, a[href^="#"]');
 
             const handleScroll = () => {
@@ -791,27 +767,11 @@
                     header.classList.add('bg-white', 'shadow-md');
                     header.classList.remove('bg-transparent');
                 } else {
-                    if (!mobileMenu.classList.contains('active')) {
-                        header.classList.remove('bg-white', 'shadow-md');
-                        header.classList.add('bg-transparent');
-                    }
+                    header.classList.remove('bg-white', 'shadow-md');
+                    header.classList.add('bg-transparent');
                 }
             };
             window.addEventListener('scroll', handleScroll);
-
-            mobileMenuButton.addEventListener('click', () => {
-                const isOpen = mobileMenu.classList.toggle('hidden');
-                mobileMenu.classList.toggle('active', !isOpen);
-                menuOpenIcon.classList.toggle('hidden');
-                menuCloseIcon.classList.toggle('hidden');
-                
-                if (!isOpen) {
-                    header.classList.add('bg-white', 'shadow-md');
-                    header.classList.remove('bg-transparent');
-                } else {
-                    handleScroll();
-                }
-            });
 
             navLinks.forEach(link => {
                 link.addEventListener('click', function (e) {
@@ -825,13 +785,6 @@
                            targetElement.scrollIntoView({ behavior: 'smooth' });
                         }
                         
-                        if (!mobileMenu.classList.contains('hidden')) {
-                           mobileMenu.classList.add('hidden');
-                           mobileMenu.classList.remove('active');
-                           menuOpenIcon.classList.remove('hidden');
-                           menuCloseIcon.classList.add('hidden');
-                           handleScroll();
-                        }
                     }
                 });
             });
@@ -1232,3 +1185,5 @@
     </script>
 </body>
 </html>
+
+
