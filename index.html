@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sparzine Laundromat | Premium Laundry & Dry Cleaning in Kampala</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- SUPABASE CLIENT LIBRARY -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <link rel="icon" href="https://i.imgur.com/p1lpP9Q.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -70,9 +69,7 @@
 </head>
 <body class="bg-brand-bg text-gray-800 font-sans">
     <div id="root">
-        <!-- App Container -->
         <div class="bg-brand-bg text-gray-800 font-sans">
-            <!-- Header -->
             <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent">
                 <div class="container mx-auto px-6 py-2 flex justify-between items-center flex-wrap">
                     <div class="flex items-center cursor-pointer" onclick="document.getElementById('hero').scrollIntoView({ behavior: 'smooth' });">
@@ -81,10 +78,8 @@
                         </div>
                     </div>
                     
-                    <!-- Desktop Nav (NOW VISIBLE ON MOBILE) -->
                     <nav class="hidden md:flex flex-wrap justify-center md:justify-end items-center gap-x-4 gap-y-2 md:space-x-8 w-full md:w-auto order-last md:order-none mt-2 md:mt-0">
                         <a href="#services" class="text-white hover:text-gray-200 font-medium transition-colors text-lg">Services</a>
-                        <!-- ADDED PRICING LINK -->
                         <a href="#pricing" class="text-white hover:text-gray-200 font-medium transition-colors text-lg">Pricing</a>
                         <a href="#products" class="text-white hover:text-gray-200 font-medium transition-colors text-lg">Products</a>
                         <a href="#why-us" class="text-white hover:text-gray-200 font-medium transition-colors text-lg">Why Us</a>
@@ -92,25 +87,18 @@
                         <a href="#contact" class="text-white hover:text-gray-200 font-medium transition-colors text-lg">Contact</a>
                     </nav>
 
-                    <!-- Mobile Menu Button (REMOVED) -->
+                    </div>
 
-                </div>
-
-                <!-- Mobile Nav (REMOVED) -->
-            </header>
+                </header>
 
             <main>
-                <!-- Hero Section -->
                 <section id="hero" class="relative h-screen flex items-center justify-center text-center bg-cover bg-center" style="background-image: url('https://images.ctfassets.net/exql6ar8lq2x/NfwPpi4kVTF6b4CbgbJRc/9e4b2a83ab5b5a093f9f754aa1a84d10/dallas_dry_cleaner_600x.jpg?fm=webp')">
                     <div class="absolute inset-0 bg-black bg-opacity-50"></div>
-                    <!-- MODIFIED HERO CONTENT -->
                     <div class="relative z-10 p-6">
-                        <!-- NEW: Company Name -->
                         <h2 class="text-2xl md:text-3xl font-semibold text-white uppercase tracking-wider" style="text-shadow: 1px 1px 4px rgba(0,0,0,0.5)">
                             Sparzine Laundromat
                         </h2>
 
-                        <!-- NEW: Mobile Hero Nav -->
                         <nav class="my-4 md:hidden flex flex-wrap justify-center gap-x-4 gap-y-2">
                             <a href="#services" class="text-brand-green-light hover:text-white font-medium transition-colors text-lg">Services</a>
                             <a href="#pricing" class="text-brand-green-light hover:text-white font-medium transition-colors text-lg">Pricing</a>
@@ -119,9 +107,6 @@
                             <a href="#testimonials" class="text-brand-green-light hover:text-white font-medium transition-colors text-lg">Testimonials</a>
                             <a href="#contact" class="text-brand-green-light hover:text-white font-medium transition-colors text-lg">Contact</a>
                         </nav>
-                        <!-- END: Mobile Hero Nav -->
-
-                        <!-- MODIFIED: Smaller Heading -->
                         <h1 class="text-3xl md:text-5xl font-extrabold text-white leading-tight tracking-tight mt-4" style="text-shadow: 2px 2px 8px rgba(0,0,0,0.6)">
                             Premium Care 
                             <br />
@@ -132,21 +117,17 @@
                             Experience the best laundry and dry cleaning service in Kampala. We treat your clothes with the care they deserve.
                         </p>
                         
-                        <!-- MODIFIED: Button Group -->
                         <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
                             <a href="#services" class="bg-brand-green-light text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-opacity-90 transition-all hover:scale-105 transform shadow-2xl">
                                 Discover Our Services
                             </a>
-                            <!-- NEW: Call Us Button -->
                             <a href="tel:+256707128442" class="bg-white text-brand-green px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-100 transition-all hover:scale-105 transform shadow-2xl">
                                 Call Us Now: 070 712 8442
                             </a>
                         </div>
                     </div>
-                    <!-- END MODIFIED HERO CONTENT -->
-                </section>
+                    </section>
 
-                <!-- Services Section -->
                 <section id="services" class="py-24 bg-brand-bg-alt">
                     <div class="container mx-auto px-6">
                         <div class="text-center mb-16">
@@ -156,7 +137,6 @@
                             </p>
                         </div>
                         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                            <!-- Service Card 1 -->
                             <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col items-center text-center border border-transparent hover:border-green-200">
                                 <svg class="h-12 w-12 text-brand-green mb-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M20.38 3.46 16 2a4 4 0 0 0-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23Z" />
@@ -164,8 +144,7 @@
                                 <h3 class="text-2xl font-bold text-gray-800 mb-2">Dry Cleaning</h3>
                                 <p class="text-gray-600">Expert care for your delicate and valuable garments, using eco-friendly solvents to ensure a perfect finish.</p>
                             </div>
-                            <!-- Service Card 2 -->
-                             <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col items-center text-center border border-transparent hover:border-green-200">
+                            <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col items-center text-center border border-transparent hover:border-green-200">
                                 <svg class="h-12 w-12 text-brand-green mb-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M16 18H8a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2Z" />
                                     <path d="M15 4h2" />
@@ -176,8 +155,7 @@
                                 <h3 class="text-2xl font-bold text-gray-800 mb-2">Wash & Fold</h3>
                                 <p class="text-gray-600">Your everyday laundry, perfectly washed, dried, and folded. A simple, time-saving solution for busy lives.</p>
                             </div>
-                            <!-- Service Card 3 -->
-                             <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col items-center text-center border border-transparent hover:border-green-200">
+                            <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col items-center text-center border border-transparent hover:border-green-200">
                                 <svg class="h-12 w-12 text-brand-green mb-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M18 6V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v2" />
                                     <path d="M20 12v-2a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v2c0 1.1.9 2 2 2h12a2 2 0 0 0 2-2Z" />
@@ -188,8 +166,7 @@
                                 <h3 class="text-2xl font-bold text-gray-800 mb-2">Ironing & Pressing</h3>
                                 <p class="text-gray-600">Crisp, wrinkle-free clothes ready to wear. We press everything from business shirts to bed linens with precision.</p>
                             </div>
-                            <!-- Service Card 4 -->
-                             <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col items-center text-center border border-transparent hover:border-green-200">
+                            <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col items-center text-center border border-transparent hover:border-green-200">
                                 <svg class="h-12 w-12 text-brand-green mb-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="m12 3-1.9 4.8-4.8 1.9 4.8 1.9 1.9 4.8 1.9-4.8 4.8-1.9-4.8-1.9Z"/>
                                     <path d="M5 22 7 17l5-2-5-2-2-5"/>
@@ -198,44 +175,35 @@
                                 <h3 class="text-2xl font-bold text-gray-800 mb-2">Stain Removal</h3>
                                 <p class="text-gray-600">Our specialists tackle tough stains with advanced techniques, restoring your favorite items to their former glory.</p>
                             </div>
-                            <!-- Service Card 5 -->
-                             <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col items-center text-center border border-transparent hover:border-green-200">
+                            <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col items-center text-center border border-transparent hover:border-green-200">
                                 <svg class="h-12 w-12 text-brand-green mb-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 18v-2.5c0-1.4-1.1-2.5-2.5-2.5H14"/><path d="M13 15.5V6.4a2.4 2.4 0 0 0-4.8 0v9.1"/><path d="M8.2 15.5v-2.2a1.8 1.8 0 0 0-3.6 0v2.2"/><path d="M4.6 15.5H14a2.5 2.5 0 0 1 2.5 2.5V20"/><path d="M2.5 18H20"/></svg>
                                 <h3 class="text-2xl font-bold text-gray-800 mb-2">Carpet Cleaning</h3>
                                 <p class="text-gray-600">Deep cleaning for rugs and carpets of all sizes, removing dirt and allergens to freshen up your home.</p>
                             </div>
-                            <!-- Service Card 6 -->
-                             <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col items-center text-center border border-transparent hover:border-green-200">
+                            <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col items-center text-center border border-transparent hover:border-green-200">
                                 <svg class="h-12 w-12 text-brand-green mb-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v3"/><path d="M2 12h20"/><path d="M3 12v6a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-6"/><path d="M4 17h.01"/><path d="M20 17h.01"/></svg>
                                 <h3 class="text-2xl font-bold text-gray-800 mb-2">Sofa Set Cleaning</h3>
                                 <p class="text-gray-600">Professional upholstery cleaning for your sofas and chairs, reviving fabrics and removing stubborn spots.</p>
                             </div>
-                             <!-- Service Card 7 -->
                              <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col items-center text-center border border-transparent hover:border-green-200">
                                 <svg class="h-12 w-12 text-brand-green mb-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18v-1a2 2 0 0 1 2-2h8a1 1 0 0 1 1 1v2a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-2.34a1 1 0 0 0-.28-.7L18.4 9.94a1 1 0 0 0-.78-.44H6.4a1 1 0 0 0-.78.44L3.28 15.96a1 1 0 0 0-.28.7V17a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1Z"/><path d="M12 15v-3"/></svg>
                                 <h3 class="text-2xl font-bold text-gray-800 mb-2">Shoe Cleaning</h3>
                                 <p class="text-gray-600">Specialized cleaning for all types of footwear, from sneakers to formal shoes, bringing them back to life.</p>
                             </div>
-                            <!-- Service Card 8 - NEW -->
-                             <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col items-center text-center border border-transparent hover:border-green-200">
+                            <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col items-center text-center border border-transparent hover:border-green-200">
                                 <svg class="h-12 w-12 text-brand-green mb-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
                                 <h3 class="text-2xl font-bold text-gray-800 mb-2">Residential Cleaning</h3>
                                 <p class="text-gray-600">Complete home cleaning services to make your living space spotless, from top to bottom.</p>
                             </div>
-                            <!-- Service Card 9 - NEW -->
-                             <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col items-center text-center border border-transparent hover:border-green-200">
+                            <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col items-center text-center border border-transparent hover:border-green-200">
                                 <svg class="h-12 w-12 text-brand-green mb-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19.4 11.6 12.8 5a2 2 0 0 0-2.8 0L3.4 11.6a2 2 0 0 0 2.8 2.8l.2-.2V20a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-5.8l.2.2a2 2 0 0 0 2.8-2.8Z"/></svg>
                                 <h3 class="text-2xl font-bold text-gray-800 mb-2">Post-Construction Cleaning</h3>
                                 <p class="text-gray-600">Detailed cleaning after your renovation or construction project, handling all the dust and debris.</p>
                             </div>
                         </div>
                     </div>
-                </section> <!-- END #services -->
-
-                <!-- START NEW PRICING SECTION -->
-                <section id="pricing" class="py-24 bg-brand-bg">
+                </section> <section id="pricing" class="py-24 bg-brand-bg">
                     <div class="container mx-auto px-6">
-                        <!-- Section Header -->
                         <div class="text-center mb-16">
                             <h2 class="text-4xl md:text-5xl font-extrabold text-gray-800">Our Competitive Pricing</h2>
                             <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
@@ -243,14 +211,11 @@
                             </p>
                         </div>
                         
-                        <!-- Pricing List Container -->
                         <div class="max-w-5xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden">
                             <div class="grid grid-cols-1 lg:grid-cols-2">
                                 
-                                <!-- Left Column -->
                                 <div class="p-8 md:p-12">
                                     <ul class="space-y-4">
-                                        <!-- Item -->
                                         <li class="flex justify-between items-center py-3 border-b border-gray-200">
                                             <div>
                                                 <h3 class="text-lg font-semibold text-gray-800">Clothes (Normal wash)</h3>
@@ -258,7 +223,6 @@
                                             </div>
                                             <div class="text-lg font-bold text-brand-green"><span id="price-clothes-kg">3,000</span>/- <button id="edit-clothes-kg" class="edit-btn hidden">Edit</button></div>
                                         </li>
-                                        <!-- Item -->
                                         <li class="flex justify-between items-center py-3 border-b border-gray-200">
                                             <div>
                                                 <h3 class="text-lg font-semibold text-gray-800">Curtains</h3>
@@ -266,7 +230,6 @@
                                             </div>
                                             <div class="text-lg font-bold text-brand-green"><span id="price-curtains-kg">5,000</span>/- <button id="edit-curtains-kg" class="edit-btn hidden">Edit</button></div>
                                         </li>
-                                        <!-- Item -->
                                         <li class="flex justify-between items-center py-3 border-b border-gray-200">
                                             <div>
                                                 <h3 class="text-lg font-semibold text-gray-800">Jackets</h3>
@@ -274,7 +237,6 @@
                                             </div>
                                             <div class="text-lg font-bold text-brand-green"><span id="price-jackets-each">3,000</span>/- <button id="edit-jackets-each" class="edit-btn hidden">Edit</button></div>
                                         </li>
-                                        <!-- Item -->
                                         <li class="flex justify-between items-center py-3 border-b border-gray-200">
                                             <div>
                                                 <h3 class="text-lg font-semibold text-gray-800">Ironing only</h3>
@@ -282,7 +244,6 @@
                                             </div>
                                             <div class="text-lg font-bold text-brand-green"><span id="price-ironing-each">2,000</span>/- <button id="edit-ironing-each" class="edit-btn hidden">Edit</button></div>
                                         </li>
-                                        <!-- Item -->
                                         <li class="flex justify-between items-center py-3 border-b border-gray-200">
                                             <div>
                                                 <h3 class="text-lg font-semibold text-gray-800">Ironing only</h3>
@@ -290,7 +251,6 @@
                                             </div>
                                             <div class="text-lg font-bold text-brand-green"><span id="price-ironing-kg">4,000</span>/- <button id="edit-ironing-kg" class="edit-btn hidden">Edit</button></div>
                                         </li>
-                                        <!-- Item -->
                                         <li class="flex justify-between items-center py-3 border-b border-gray-200">
                                             <div>
                                                 <h3 class="text-lg font-semibold text-gray-800">Suits</h3>
@@ -298,7 +258,6 @@
                                             </div>
                                             <div class="text-lg font-bold text-brand-green"><span id="price-suits-each">20,000</span>/- <button id="edit-suits-each" class="edit-btn hidden">Edit</button></div>
                                         </li>
-                                        <!-- Item -->
                                         <li class="flex justify-between items-center py-3 border-b border-gray-200">
                                             <div>
                                                 <h3 class="text-lg font-semibold text-gray-800">Duvets (Small)</h3>
@@ -306,9 +265,7 @@
                                             </div>
                                             <div class="text-lg font-bold text-brand-green"><span id="price-duvets-small">10,000</span>/- <button id="edit-duvets-small" class="edit-btn hidden">Edit</button></div>
                                         </li>
-                                        <!-- Item -->
-                                        <li class="flex justify-between items-center py-3"> <!-- Last item no border -->
-                                            <div>
+                                        <li class="flex justify-between items-center py-3"> <div>
                                                 <h3 class="text-lg font-semibold text-gray-800">Duvets (Large)</h3>
                                                 <p class="text-sm text-gray-500">Each</p>
                                             </div>
@@ -317,10 +274,8 @@
                                     </ul>
                                 </div>
                                 
-                                <!-- Right Column -->
                                 <div class="p-8 md:p-12 lg:border-l border-gray-100">
                                     <ul class="space-y-4">
-                                        <!-- Item -->
                                         <li class="flex justify-between items-center py-3 border-b border-gray-200">
                                             <div>
                                                 <h3 class="text-lg font-semibold text-gray-800">Blanket</h3>
@@ -328,7 +283,6 @@
                                             </div>
                                             <div class="text-lg font-bold text-brand-green"><span id="price-blanket-each">15,000</span>/- <button id="edit-blanket-each" class="edit-btn hidden">Edit</button></div>
                                         </li>
-                                        <!-- Item -->
                                         <li class="flex justify-between items-center py-3 border-b border-gray-200">
                                             <div>
                                                 <h3 class="text-lg font-semibold text-gray-800">Bed Sheet</h3>
@@ -336,7 +290,6 @@
                                             </div>
                                             <div class="text-lg font-bold text-brand-green"><span id="price-bedsheet-each">3,000</span>/- <button id="edit-bedsheet-each" class="edit-btn hidden">Edit</button></div>
                                         </li>
-                                        <!-- Item -->
                                         <li class="flex justify-between items-center py-3 border-b border-gray-200">
                                             <div>
                                                 <h3 class="text-lg font-semibold text-gray-800">Kanzu</h3>
@@ -344,7 +297,6 @@
                                             </div>
                                             <div class="text-lg font-bold text-brand-green"><span id="price-kanzu-each">7,000</span>/- <button id="edit-kanzu-each" class="edit-btn hidden">Edit</button></div>
                                         </li>
-                                        <!-- Item -->
                                         <li class="flex justify-between items-center py-3 border-b border-gray-200">
                                             <div>
                                                 <h3 class="text-lg font-semibold text-gray-800">Gomesi</h3>
@@ -352,7 +304,6 @@
                                             </div>
                                             <div class="text-lg font-bold text-brand-green"><span id="price-gomesi-each">15,000</span>/- <button id="edit-gomesi-each" class="edit-btn hidden">Edit</button></div>
                                         </li>
-                                        <!-- Item -->
                                         <li class="flex justify-between items-center py-3 border-b border-gray-200">
                                             <div>
                                                 <h3 class="text-lg font-semibold text-gray-800">School Bag</h3>
@@ -360,7 +311,6 @@
                                             </div>
                                             <div class="text-lg font-bold text-brand-green"><span id="price-schoolbag-each">5,000</span>/- <button id="edit-schoolbag-each" class="edit-btn hidden">Edit</button></div>
                                         </li>
-                                        <!-- Item -->
                                         <li class="flex justify-between items-center py-3 border-b border-gray-200">
                                             <div>
                                                 <h3 class="text-lg font-semibold text-gray-800">Suitcase (Small)</h3>
@@ -368,7 +318,6 @@
                                             </div>
                                             <div class="text-lg font-bold text-brand-green"><span id="price-suitcase-small">10,000</span>/- <button id="edit-suitcase-small" class="edit-btn hidden">Edit</button></div>
                                         </li>
-                                        <!-- Item -->
                                         <li class="flex justify-between items-center py-3 border-b border-gray-200">
                                             <div>
                                                 <h3 class="text-lg font-semibold text-gray-800">Suitcase (Big)</h3>
@@ -376,9 +325,7 @@
                                             </div>
                                             <div class="text-lg font-bold text-brand-green"><span id="price-suitcase-big">15,000</span>/- <button id="edit-suitcase-big" class="edit-btn hidden">Edit</button></div>
                                         </li>
-                                        <!-- Item -->
-                                        <li class="flex justify-between items-center py-3"> <!-- Last item no border -->
-                                            <div>
+                                        <li class="flex justify-between items-center py-3"> <div>
                                                 <h3 class="text-lg font-semibold text-gray-800">Shoes (Pair)</h3>
                                                 <p class="text-sm text-gray-500">Each</p>
                                             </div>
@@ -390,12 +337,8 @@
                         </div>
                     </div>
                 </section>
-                <!-- END NEW PRICING SECTION -->
-
-                <!-- START NEW PRODUCTS SECTION -->
                 <section id="products" class="py-24 bg-brand-bg-alt">
                     <div class="container mx-auto px-6">
-                        <!-- Section Header -->
                         <div class="text-center mb-16">
                             <h2 class="text-4xl md:text-5xl font-extrabold text-gray-800">Our Cleaning Products</h2>
                             <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
@@ -403,15 +346,12 @@
                             </p>
                         </div>
                         
-                        <!-- Products Grid -->
                         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                             
-                            <!-- Product Card 1 -->
                             <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden flex flex-col">
                                 <img src="https://lh3.googleusercontent.com/d/18LrgOln8IVBA7yBuX6g-axVLL8-lYpqb" alt="Liquid Soap Dispenser" class="w-full h-64 object-cover" id="product-img-product-1" onerror="this.src='https://placehold.co/400x400/22c55e/ffffff?text=Image+Not+Found'">
                                 <div class="p-6 flex flex-col flex-grow">
                                     <h3 class="text-xl font-bold text-gray-800 mb-2" id="product-name-product-1">Dry cleaning powder</h3>
-                                    <!-- NEW EDIT BUTTON -->
                                     <button id="edit-product-1" class="edit-btn product-edit-btn hidden">Edit Product</button>
                                     <a href="https://wa.me/256707128442?text=I'm%20interested%20in%20ordering%20the%20Dry%20cleaning%20powder" target="_blank" rel="noopener noreferrer" class="bg-brand-green-light text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-opacity-90 transition-all inline-block text-center mt-auto" id="product-link-product-1">
                                         Order on WhatsApp
@@ -419,55 +359,43 @@
                                 </div>
                             </div>
                             
-                            <!-- Product Card 2 -->
                             <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden flex flex-col">
                                 <img src="https://lh3.googleusercontent.com/d/1r0N2kezBHPWxKfb4fljXM60A5esbHkbE" alt="Jumbo Paper Towel" class="w-full h-64 object-cover" id="product-img-product-2" onerror="this.src='https://placehold.co/400x400/22c55e/ffffff?text=Image+Not+Found'">
                                 <div class="p-6 flex flex-col flex-grow">
                                     <h3 class="text-xl font-bold text-gray-800 mb-2" id="product-name-product-2">wool& delicate fabric wash</h3>
-                                     <!-- NEW EDIT BUTTON -->
-                                    <button id="edit-product-2" class="edit-btn product-edit-btn hidden">Edit Product</button>
+                                     <button id="edit-product-2" class="edit-btn product-edit-btn hidden">Edit Product</button>
                                      <a href="https://wa.me/256707128442?text=I'm%20interested%20in%20ordering%20the%20wool%26%20delicate%20fabric%20wash" target="_blank" rel="noopener noreferrer" class="bg-brand-green-light text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-opacity-90 transition-all inline-block text-center mt-auto" id="product-link-product-2">
                                         Order on WhatsApp
                                     </a>
                                 </div>
                             </div>
 
-                            <!-- Product Card 3 -->
                             <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden flex flex-col">
                                 <img src="https://lh3.googleusercontent.com/d/15xww3JSdrsykBgzUqYmlIl_A9a0hH2hn" alt="Paper Hand Towels" class="w-full h-64 object-cover" id="product-img-product-3" onerror="this.src='https://placehold.co/400x400/22c55e/ffffff?text=Image+Not+Found'">
                                 <div class="p-6 flex flex-col flex-grow">
                                     <h3 class="text-xl font-bold text-gray-800 mb-2" id="product-name-product-3">Suit freshener spray</h3>
-                                     <!-- NEW EDIT BUTTON -->
-                                    <button id="edit-product-3" class="edit-btn product-edit-btn hidden">Edit Product</button>
+                                     <button id="edit-product-3" class="edit-btn product-edit-btn hidden">Edit Product</button>
                                      <a href="https://wa.me/256707128442?text=I'm%20interested%20in%20ordering%20the%20Suit%20freshener%20spray" target="_blank" rel="noopener noreferrer" class="bg-brand-green-light text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-opacity-90 transition-all inline-block text-center mt-auto" id="product-link-product-3">
                                         Order on WhatsApp
                                     </a>
                                 </div>
                             </div>
 
-                            <!-- Product Card 4 -->
                             <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden flex flex-col">
                                 <img src="https://lh3.googleusercontent.com/d/1723bV-c6Q5AsHeEtzi0AItktVmRRDCh-" alt="Towel Dispenser" class="w-full h-64 object-cover" id="product-img-product-4" onerror="this.src='https://placehold.co/400x400/22c55e/ffffff?text=Image+Not+Found'">
                                 <div class="p-6 flex flex-col flex-grow">
                                     <h3 class="text-xl font-bold text-gray-800 mb-2" id="product-name-product-4">Stain&spot remover</h3>
-                                     <!-- NEW EDIT BUTTON -->
-                                    <button id="edit-product-4" class="edit-btn product-edit-btn hidden">Edit Product</button>
+                                     <button id="edit-product-4" class="edit-btn product-edit-btn hidden">Edit Product</button>
                                      <a href="https://wa.me/256707128442?text=I'm%20interested%20in%20ordering%20the%20Stain%26spot%20remover" target="_blank" rel="noopener noreferrer" class="bg-brand-green-light text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-opacity-90 transition-all inline-block text-center mt-auto" id="product-link-product-4">
                                         Order on WhatsApp
                                     </a>
                                 </div>
                             </div>
                             
-                            <!-- REMOVED LAST 3 PRODUCTS -->
-
-                        </div>
+                            </div>
                     </div>
                 </section>
-                <!-- END NEW PRODUCTS SECTION -->
-                
-                <!-- Why Choose Us Section -->
-                <section id="why-us" class="py-24 bg-brand-bg"> <!-- Changed background for alternation -->
-                    <div class="container mx-auto px-6">
+                <section id="why-us" class="py-24 bg-brand-bg"> <div class="container mx-auto px-6">
                         <div class="text-center mb-16">
                             <h2 class="text-4xl md:text-5xl font-extrabold text-gray-800">Why Sparzine Stands Out</h2>
                             <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
@@ -475,7 +403,6 @@
                             </p>
                         </div>
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                            <!-- Feature Card 1 -->
                             <div class="flex flex-col items-center text-center p-6">
                                 <div class="bg-green-100 rounded-full p-5 mb-6 inline-block">
                                     <svg class="h-12 w-12 text-brand-green" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
@@ -483,7 +410,6 @@
                                 <h3 class="text-2xl font-bold text-gray-800 mb-2">Impeccable Quality</h3>
                                 <p class="text-gray-600">We use state-of-the-art equipment and premium detergents to ensure your garments are returned in pristine condition, every single time.</p>
                             </div>
-                            <!-- Feature Card 2 -->
                             <div class="flex flex-col items-center text-center p-6">
                                 <div class="bg-green-100 rounded-full p-5 mb-6 inline-block">
                                     <svg class="h-12 w-12 text-brand-green" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 4 13V8a5 5 0 0 1 10 0v5a7 7 0 0 1-7 7h-1"/><path d="M11 18c1.66 0 3-1.34 3-3V8a3 3 0 0 0-6 0v7c0 1.66 1.34 3 3 3z"/></svg>
@@ -491,7 +417,6 @@
                                 <h3 class="text-2xl font-bold text-gray-800 mb-2">Eco-Friendly Cleaning</h3>
                                 <p class="text-gray-600">Our commitment to the planet means we use environmentally safe solvents and energy-efficient processes to minimize our footprint.</p>
                             </div>
-                            <!-- Feature Card 3 -->
                             <div class="flex flex-col items-center text-center p-6">
                                 <div class="bg-green-100 rounded-full p-5 mb-6 inline-block">
                                     <svg class="h-12 w-12 text-brand-green" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
@@ -503,9 +428,7 @@
                     </div>
                 </section>
                 
-                <!-- Testimonials Section -->
-                <section id="testimonials" class="py-24 bg-brand-bg-alt"> <!-- Changed background for alternation -->
-                    <div class="container mx-auto px-6">
+                <section id="testimonials" class="py-24 bg-brand-bg-alt"> <div class="container mx-auto px-6">
                         <div class="text-center mb-16">
                             <h2 class="text-4xl md:text-5xl font-extrabold text-gray-800">What Our Customers Say</h2>
                             <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
@@ -513,8 +436,7 @@
                             </p>
                         </div>
                         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                           <!-- Testimonial Card 1 -->
-                            <div class="bg-white p-8 rounded-xl shadow-lg flex flex-col items-center text-center h-full">
+                           <div class="bg-white p-8 rounded-xl shadow-lg flex flex-col items-center text-center h-full">
                                 <div class="flex justify-center mb-4">
                                     <svg class="w-6 h-6 text-yellow-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                                     <svg class="w-6 h-6 text-yellow-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
@@ -525,7 +447,6 @@
                                 <p class="text-gray-600 italic mb-6 flex-grow">"Fast and thoughtful work they do, very passionate about the customer's needs."</p>
                                 <h4 class="font-bold text-lg text-brand-green">- Lexyr</h4>
                             </div>
-                            <!-- Testimonial Card 2 -->
                             <div class="bg-white p-8 rounded-xl shadow-lg flex flex-col items-center text-center h-full">
                                 <div class="flex justify-center mb-4">
                                     <svg class="w-6 h-6 text-yellow-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
@@ -537,13 +458,12 @@
                                 <p class="text-gray-600 italic mb-6 flex-grow">"The best plug in Mulago! The services are quick and the quality is top-notch. I would advise you all to pass by."</p>
                                 <h4 class="font-bold text-lg text-brand-green">- Jacobs King</h4>
                             </div>
-                            <!-- Testimonial Card 3 -->
                             <div class="bg-white p-8 rounded-xl shadow-lg flex flex-col items-center text-center h-full">
                                 <div class="flex justify-center mb-4">
                                     <svg class="w-6 h-6 text-yellow-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                                     <svg class="w-6 h-6 text-yellow-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                                     <svg class="w-6 h-6 text-yellow-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                                    <svg class="w-6 h-6 text-yellow-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                    <svg class="w-6 h-6 text-yellow-400" xmlns="http://www.w3.org/2Ssvg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                                     <svg class="w-6 h-6 text-yellow-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                                 </div>
                                 <p class="text-gray-600 italic mb-6 flex-grow">"Sparzine is a lifesaver! My suits have never looked better, and their service is always quick and professional. The only place I trust in Kampala for my dry cleaning."</p>
@@ -553,9 +473,7 @@
                     </div>
                 </section>
                 
-                <!-- Contact Section -->
-                <section id="contact" class="py-24 bg-brand-bg"> <!-- Changed background for alternation -->
-                    <div class="container mx-auto px-6">
+                <section id="contact" class="py-24 bg-brand-bg"> <div class="container mx-auto px-6">
                         <div class="text-center mb-16">
                             <h2 class="text-4xl md:text-5xl font-extrabold text-gray-800">Get in Touch</h2>
                             <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
@@ -563,13 +481,11 @@
                             </p>
                         </div>
                         <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-0 rounded-2xl shadow-2xl overflow-hidden">
-                            <!-- Contact Info and Hours -->
                             <div class="relative bg-cover bg-center p-8 md:p-12 text-white" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpjHBviPFe_PZ9GuzBAwSiid-odwzWYnzR7A&s')">
                                 <div class="absolute inset-0 bg-brand-green bg-opacity-80"></div>
                                 <div class="relative z-10">
                                     <h3 class="text-3xl font-bold mb-8">Contact Information</h3>
                                     <div class="space-y-8">
-                                        <!-- Location -->
                                         <div class="flex items-start">
                                             <div class="flex-shrink-0 h-12 w-12 flex items-center justify-center bg-white/20 text-white rounded-full">
                                                 <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -579,7 +495,6 @@
                                                 <div class="text-green-100"><p>Mawanda Road, Kampala, Uganda</p></div>
                                             </div>
                                         </div>
-                                        <!-- Call Us -->
                                         <div class="flex items-start">
                                             <div class="flex-shrink-0 h-12 w-12 flex items-center justify-center bg-white/20 text-white rounded-full">
                                                 <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
@@ -589,7 +504,6 @@
                                                 <div class="text-green-100"><p>070 712 8442</p></div>
                                             </div>
                                         </div>
-                                        <!-- WhatsApp -->
                                         <div class="flex items-start">
                                             <div class="flex-shrink-0 h-12 w-12 flex items-center justify-center rounded-full">
                                                <img src="https://www.vhv.rs/dpng/d/552-5528678_thumb-image-icon-whatsapp-logo-png-transparent-png.png" alt="WhatsApp Icon" class="h-12 w-12">
@@ -603,7 +517,6 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <!-- Email -->
                                         <div class="flex items-start">
                                             <div class="flex-shrink-0 h-12 w-12 flex items-center justify-center bg-white/20 text-white rounded-full">
                                                 <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
@@ -618,15 +531,13 @@
                                             <h3 class="text-2xl font-bold text-white mb-4">Opening Hours</h3>
                                             <ul class="space-y-2 text-green-100">
                                                 <li class="flex justify-between"><span>Monday - Saturday</span> <span>8:00 AM - 8:00 PM</span></li>
-                                                <!-- MODIFIED: Updated Sunday hours -->
-                                                <li class="flex justify-between"><span>Sunday</span> <span class="font-semibold text-red-300">Closed</span></li>
+                                                <li class="flex justify-between"><span>Sunday</span> <span>8:00 AM - 8:00 PM</span></li>
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- Contact Form -->
                             <div class="bg-white p-8 md:p-12">
                                 <h3 class="text-3xl font-bold mb-8 text-gray-800">Send Us a Message</h3>
                                 <form action="#" method="POST" class="space-y-6">
@@ -654,18 +565,15 @@
                 </section>
             </main>
 
-            <!-- Footer -->
             <footer class="bg-gray-800 text-white">
                 <div class="container mx-auto px-6 py-12">
                     <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                        <!-- MODIFIED: Brand column span -->
                         <div class="col-span-1">
                             <h3 class="text-2xl font-bold text-brand-green-light">Sparzine Laundromat</h3>
                             <p class="mt-2 text-gray-400 max-w-sm">Your trusted partner for fresh, clean clothes in Kampala. We combine modern technology with a personal touch.</p>
                         </div>
                         <div>
                             <h4 class="font-semibold text-lg mb-4">Quick Links</h4>
-                            <!-- MODIFIED: Made links horizontal -->
                             <ul class="flex flex-wrap gap-x-4 gap-y-2">
                                 <li><a href="#services" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
                                 <li><a href="#pricing" class="text-gray-400 hover:text-white transition-colors">Pricing</a></li>
@@ -673,7 +581,6 @@
                                 <li><a href="#why-us" class="text-gray-400 hover:text-white transition-colors">Why Us</a></li>
                                 <li><a href="#testimonials" class="text-gray-400 hover:text-white transition-colors">Testimonials</a></li>
                                 <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
-                                <!-- ADMIN LINKS -->
                                 <li><a href="#" id="admin-login-link" class="text-gray-400 hover:text-white transition-colors">Admin Login</a></li>
                                 <li><a href="#" id="admin-logout-link" class="text-gray-400 hover:text-white transition-colors hidden">Admin Logout</a></li>
                             </ul>
@@ -687,10 +594,8 @@
                                 <li><a href="mailto:sparzinelaundromat@gmail.com" class="hover:text-white transition-colors">sparzinelaundromat@gmail.com</a></li>
                             </ul>
                         </div>
-                        <!-- NEW: Social Media Links -->
                         <div>
                             <h4 class="font-semibold text-lg mb-4">Follow Us</h4>
-                            <!-- MODIFIED: Made links horizontal -->
                             <ul class="flex flex-wrap gap-x-4 gap-y-2">
                                 <li><a href="https://www.facebook.com/share/1AMnFPfoC2/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors">Facebook</a></li>
                                 <li><a href="https://www.instagram.com/sparzine?igsh=ZWtxM3psYW5vMGNt" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors">Instagram</a></li>
@@ -700,24 +605,22 @@
                         </div>
                     </div>
                     <div class="mt-12 border-t border-gray-700 pt-8 text-center text-gray-500">
-                        <p>&copy; 2024 Sparzine Laundromat. All Rights Reserved.</p>
+                        <p>© 2024 Sparzine Laundromat. All Rights Reserved.</p>
                     </div>
                 </div>
             </footer>
 
-            <!-- Floating WhatsApp Button -->
             <a href="https://wa.me/256707128442" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-all transform hover:scale-110 z-50 flex items-center justify-center" aria-label="Chat on WhatsApp">
                 <img src="https://www.vhv.rs/dpng/d/552-5528678_thumb-image-icon-whatsapp-logo-png-transparent-png.png" alt="Chat on WhatsApp" class="h-8 w-8">
             </a>
         </div>
     </div>
 
-    <!-- Admin Login Modal -->
     <div id="admin-modal" class="modal fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 p-4 opacity-0 pointer-events-none">
         <div class="modal-content bg-white w-full max-w-md p-8 rounded-xl shadow-2xl transform scale-95">
             <div class="flex justify-between items-center mb-6">
                 <h2 class="text-2xl font-bold text-gray-800">Admin Login</h2>
-                <button id="modal-close-btn" class="text-gray-500 hover:text-gray-800 text-4xl leading-none">&times;</button>
+                <button id="modal-close-btn" class="text-gray-500 hover:text-gray-800 text-4xl leading-none">×</button>
             </div>
             <form id="admin-login-form">
                 <div class="space-y-4">
@@ -738,12 +641,11 @@
         </div>
     </div>
 
-    <!-- NEW Price Edit Modal -->
     <div id="price-modal" class="modal fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 p-4 opacity-0 pointer-events-none">
         <div class="modal-content bg-white w-full max-w-md p-8 rounded-xl shadow-2xl transform scale-95">
             <div class="flex justify-between items-center mb-6">
                 <h2 class="text-2xl font-bold text-gray-800">Edit Price</h2>
-                <button id="price-modal-close-btn" class="text-gray-500 hover:text-gray-800 text-4xl leading-none">&times;</button>
+                <button id="price-modal-close-btn" class="text-gray-500 hover:text-gray-800 text-4xl leading-none">×</button>
             </div>
             <form id="price-edit-form">
                 <input type="hidden" id="price-edit-id" />
@@ -765,12 +667,11 @@
         </div>
     </div>
 
-    <!-- Product Edit Modal -->
     <div id="product-modal" class="modal fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 p-4 opacity-0 pointer-events-none">
         <div class="modal-content bg-white w-full max-w-md p-8 rounded-xl shadow-2xl transform scale-95">
             <div class="flex justify-between items-center mb-6">
                 <h2 class="text-2xl font-bold text-gray-800">Edit Product</h2>
-                <button id="product-modal-close-btn" class="text-gray-500 hover:text-gray-800 text-4xl leading-none">&times;</button>
+                <button id="product-modal-close-btn" class="text-gray-500 hover:text-gray-800 text-4xl leading-none">×</button>
             </div>
             <form id="product-edit-form">
                 <input type="hidden" id="product-edit-id" />
@@ -843,7 +744,7 @@
             
             const yearSpan = document.querySelector('footer p');
             if(yearSpan) {
-                yearSpan.innerHTML = `&copy; ${new Date().getFullYear()} Sparzine Laundromat. All Rights Reserved.`;
+                yearSpan.innerHTML = `© ${new Date().getFullYear()} Sparzine Laundromat. All Rights Reserved.`;
             }
 
             // --- NEW SUPABASE ADMIN SCRIPT ---
@@ -1237,5 +1138,3 @@
     </script>
 </body>
 </html>
-
-
